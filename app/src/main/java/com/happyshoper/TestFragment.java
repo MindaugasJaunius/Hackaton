@@ -57,10 +57,10 @@ public final class TestFragment extends Fragment implements OnClickListener {
         LinearLayout layout = null;
 
         if(mContent.equalsIgnoreCase("partners")) {
-            return (RelativeLayout) inflater.inflate(
+            return inflater.inflate(
                     R.layout.partners, null);
         } else if(mContent.equalsIgnoreCase("advices")) {
-            return (RelativeLayout) inflater.inflate(
+            return inflater.inflate(
                     R.layout.advices, null);
         } else {
             layout = (LinearLayout) inflater.inflate(

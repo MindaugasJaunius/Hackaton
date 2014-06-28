@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -83,8 +84,19 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         doneButton.setOnClickListener(mDoneButtonClickListener);
 
         mIsCapturing = true;
-        Toast.makeText(CameraActivity.this, "This shit has to include other stupid shit and don't forget that fucking number also with the line of unusable info",
-                Toast.LENGTH_LONG).show();
+        final Toast tag = Toast.makeText(CameraActivity.this, "This shit has to include other stupid shit and don't forget that fucking number also with the line of unusable info",
+                    Toast.LENGTH_LONG);
+
+
+        tag.show();
+
+        new CountDownTimer(8000, 1000)
+        {
+
+            public void onTick(long millisUntilFinished) {tag.show();}
+            public void onFinish() {tag.show();}
+
+        }.start();
     }
 
     @Override
@@ -113,6 +125,7 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         if (mCamera == null) {
             try {
                 mCamera = Camera.open();
+                mCamera.setDisplayOrientation(90);
                 mCamera.setPreviewDisplay(mCameraPreview.getHolder());
                 if (mIsCapturing) {
                     mCamera.startPreview();
