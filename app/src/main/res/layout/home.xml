@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="bottom"
-        android:background="@color/default_title_indicator_selected_color"
-        android:orientation="vertical" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="bottom"
+    android:background="@color/default_title_indicator_selected_color"
+    android:orientation="vertical">
 
     <SearchView
+        android:id="@+id/searchReceiptInputView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText" />
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/mostRecentLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Most recent" />
+
+        <ImageButton
+            android:id="@+id/takePhotoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="false"
+            android:src="@drawable/ic_launcher" />
+
+        <GridView
+            android:id="@+id/receiptGridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/takePhotoButton"
+            android:layout_below="@id/mostRecentLabel"
+            android:columnWidth="100dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth" />
+
+
+    </RelativeLayout>
 </LinearLayout>

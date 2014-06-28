@@ -1,18 +1,28 @@
 package com.happyshoper;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public final class TestFragment extends Fragment implements OnClickListener {
     private static final String KEY_CONTENT = "TestFragment:Content";
+    private static final String[] MOBILE_OS = new String[] {
+            "Android", "iOS","Windows", "Blackberry" };
+    private Context context;
+    private String mContent = "???";
 
-    public static TestFragment newInstance(String content) {
+    public static TestFragment newInstance(String content, Context context) {
         TestFragment fragment = new TestFragment();
 
         StringBuilder builder = new StringBuilder();
@@ -22,11 +32,11 @@ public final class TestFragment extends Fragment implements OnClickListener {
         String page = builder.toString();
 
         fragment.mContent = page;
-
+        fragment.context = context;
         return fragment;
     }
 
-    private String mContent = "???";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,16 +52,28 @@ public final class TestFragment extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        FrameLayout layout = null;
+        LinearLayout layout = null;
 
-        layout = (FrameLayout) inflater.inflate(
-                R.layout.home, null);
-        TextView header = (TextView) layout
-                .findViewById(R.id.notificationHeader);
-        header.setText("Current balance:");
-        TextView message = (TextView) layout
-                .findViewById(R.id.notificationMessage);
-        message.setText("249,32 kr");
+        if(mContent.equalsIgnoreCase("partners")) {
+            return (RelativeLayout) inflater.inflate(
+                    R.layout.partners, null);
+        } else if(mContent.equalsIgnoreCase("advices")) {
+            return (RelativeLayout) inflater.inflate(
+                    R.layout.advices, null);
+        } else {
+            layout = (LinearLayout) inflater.inflate(
+                    R.layout.home, null);
+            GridView gridView = (GridView) layout.findViewById(R.id.receiptGridView);
+
+            gridView.setAdapter(new ImageAdapter(context, MOBILE_OS));
+
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Log.w("happy shoper", "RECEIPT CLICKED");
+                }
+            });
+        }
 
 
         return layout;

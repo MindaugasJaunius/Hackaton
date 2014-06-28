@@ -1,48 +1,51 @@
 package com.happyshoper;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 class TestFragmentAdapter extends FragmentPagerAdapter {
 	private String notification;
-	protected static final String[] CONTENT_LOW_BALANCE = new String[] {
-			"Page1", "Page2", };
-	protected static final String[] CONTENT_MONEY_INCOMING = new String[] {
-			"Page1", "Page2", "Page3", };
 
-	public TestFragmentAdapter(FragmentManager fm) {
+	protected static final String[] TABS = new String[] {
+			"partners", "home", "advices", };
+
+    private Context context;
+
+	public TestFragmentAdapter(FragmentManager fm, Context context) {
 		super(fm);
+        this.context = context;
 	}
 
 	@Override
 	public Fragment getItem(int position) {
-		if (notification.equalsIgnoreCase("lowBalance")) {
+//		if (notification.equalsIgnoreCase("lowBalance")) {
 			return TestFragment.newInstance(
-					CONTENT_LOW_BALANCE[position % CONTENT_LOW_BALANCE.length]+notification);
-		} else if (notification.equalsIgnoreCase("moneyIncoming")) {
-			return TestFragment.newInstance(
-					CONTENT_MONEY_INCOMING[position
-							% CONTENT_MONEY_INCOMING.length]+notification);
-		} else {
-			return TestFragment.newInstance("");
-		}
+					TABS[position], context);
+//		} else if (notification.equalsIgnoreCase("moneyIncoming")) {
+//			return TestFragment.newInstance(
+//					TABS[position
+//							% TABS.length]+notification);
+//		} else {
+//			return TestFragment.newInstance("");
+//		}
 	}
 
 	@Override
 	public int getCount() {
-		if (notification.equalsIgnoreCase("lowBalance")) {
-			return CONTENT_LOW_BALANCE.length;
-		} else if (notification.equalsIgnoreCase("moneyIncoming")) {
-			return CONTENT_MONEY_INCOMING.length;
-		} else {
-			return 0;
-		}
+//		if (notification.equalsIgnoreCase("lowBalance")) {
+//			return CONTENT_LOW_BALANCE.length;
+//		} else if (notification.equalsIgnoreCase("moneyIncoming")) {
+			return TABS.length;
+//		} else {
+//			return 0;
+//		}
 	}
 
 	@Override
 	public CharSequence getPageTitle(int position) {
-		return TestFragmentAdapter.CONTENT_MONEY_INCOMING[position];
+		return TestFragmentAdapter.TABS[position];
 	}
 
 	public void setNotification(String notification) {
