@@ -1,37 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_gravity="bottom"
         android:background="@color/default_title_indicator_selected_color"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/notificationHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/text_pading_left"
-            android:layout_marginTop="@dimen/default_line_indicator_gap_width"
-            android:gravity="left"
-            android:text="Current balance:"
-            android:textColor="@color/vpi__background_holo_dark"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/notificationMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/text_pading_left"
-            android:gravity="left"
-            android:text="249,32 kr"
-            android:textColor="@color/vpi__background_holo_dark"
-            android:textSize="35dp" />
-
-    </LinearLayout>
-
-
-</FrameLayout>
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText" />
+</LinearLayout>
