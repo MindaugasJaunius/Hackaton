@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="Most recent" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/takePhotoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

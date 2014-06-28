@@ -1,6 +1,7 @@
 package com.happyshoper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -73,6 +75,9 @@ public final class TestFragment extends Fragment implements OnClickListener {
                     Log.w("happy shoper", "RECEIPT CLICKED");
                 }
             });
+
+            ImageView takePhoto = (ImageView)layout.findViewById(R.id.takePhotoButton);
+            takePhoto.setOnClickListener(this);
         }
 
 
@@ -87,6 +92,8 @@ public final class TestFragment extends Fragment implements OnClickListener {
 
     @Override
     public void onClick(View v) {
+
+        startActivityForResult(new Intent(context, CameraActivity.class), 100);
 //        if (mContent.contains("lowBalance")) {
 //            Intent myIntent = new Intent(v.getContext(),
 //                    TransferOptionsActivity.class);
