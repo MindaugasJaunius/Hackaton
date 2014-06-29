@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -19,13 +21,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
-public final class TestFragment extends Fragment implements OnClickListener {
+public final class TestFragment extends Fragment implements OnClickListener, View.OnTouchListener {
     private static final String KEY_CONTENT = "TestFragment:Content";
     private static final String[] MOBILE_OS = new String[] {
             "Android", "iOS","Windows", "Blackberry" };
     private Context context;
     private String mContent = "???";
+    private Animation slide_in_left, slide_out_right;
+    private ViewSwitcher viewSwitcher;
+    private GestureDetector gestureDetector;
+
 
     public static TestFragment newInstance(String content, Context context) {
         TestFragment fragment = new TestFragment();
@@ -63,19 +70,19 @@ public final class TestFragment extends Fragment implements OnClickListener {
             return inflater.inflate(
                     R.layout.partners, null);
         } else if(mContent.equalsIgnoreCase("advices")) {
-            layout = (LinearLayout) inflater.inflate(
+            ViewSwitcher layoutAdvices = (ViewSwitcher) inflater.inflate(
                     R.layout.advices, null);
-            TextView textView1 = (TextView) layout.findViewById(R.id.adviceTextView1);
-            TextView textView2 = (TextView) layout.findViewById(R.id.adviceTextView2);
-            TextView textView3 = (TextView) layout.findViewById(R.id.adviceTextView3);
-            TextView textView4 = (TextView) layout.findViewById(R.id.adviceTextView4);
-            TextView textView5 = (TextView) layout.findViewById(R.id.adviceTextView5);
+            TextView textView1 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView1);
+            TextView textView2 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView2);
+            TextView textView3 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView3);
+            TextView textView4 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView4);
+            TextView textView5 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView5);
 
-            final TextView textViewContent1 = (TextView) layout.findViewById(R.id.adviceTextViewContent1);
-            final TextView textViewContent2 = (TextView) layout.findViewById(R.id.adviceTextViewContent2);
-            final TextView textViewContent3 = (TextView) layout.findViewById(R.id.adviceTextViewContent3);
-            final TextView textViewContent4 = (TextView) layout.findViewById(R.id.adviceTextViewContent4);
-            final TextView textViewContent5 = (TextView) layout.findViewById(R.id.adviceTextViewContent5);
+            final TextView textViewContent1 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent1);
+            final TextView textViewContent2 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent2);
+            final TextView textViewContent3 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent3);
+            final TextView textViewContent4 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent4);
+            final TextView textViewContent5 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent5);
 
             textViewContent1.setVisibility(View.GONE);
             textViewContent2.setVisibility(View.GONE);
@@ -88,6 +95,22 @@ public final class TestFragment extends Fragment implements OnClickListener {
             expandAdvice(textView3, textViewContent3);
             expandAdvice(textView4, textViewContent4);
             expandAdvice(textView5, textViewContent5);
+
+            //viewSwitcher = (ViewSwitcher) layoutAdvices.findViewById(R.id.viewswitcher);
+
+            slide_in_left = AnimationUtils.loadAnimation(context,
+                    android.R.anim.slide_in_left);
+            slide_out_right = AnimationUtils.loadAnimation(context,
+                    android.R.anim.slide_out_right);
+
+            layoutAdvices.setInAnimation(slide_in_left);
+            layoutAdvices.setOutAnimation(slide_out_right);
+
+            gestureDetector = new GestureDetector(context, new GestureListener());
+
+            layoutAdvices.setOnTouchListener(this);
+            viewSwitcher = layoutAdvices;
+            return layoutAdvices;
 
         } else {
             layout = (LinearLayout) inflater.inflate(
@@ -177,4 +200,63 @@ public final class TestFragment extends Fragment implements OnClickListener {
         }
     }
 
+    private final class GestureListener extends GestureDetector.SimpleOnGestureListener {
+
+        private static final int SWIPE_THRESHOLD = 100;
+        private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+
+        @Override
+        public boolean onDown(MotionEvent e) {
+            return true;
+        }
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            boolean result = false;
+            try {
+                float diffY = e2.getY() - e1.getY();
+                float diffX = e2.getX() - e1.getX();
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                        if (diffX > 0) {
+                            onSwipeRight();
+                        } else {
+                            onSwipeLeft();
+                        }
+                    }
+                } else {
+                    if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+                        if (diffY > 0) {
+                            onSwipeBottom();
+                        } else {
+                            onSwipeTop();
+                        }
+                    }
+                }
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+            return result;
+        }
+    }
+
+    public void onSwipeRight() {
+        viewSwitcher.showNext();
+    }
+
+    public void onSwipeLeft() {
+        viewSwitcher.showPrevious();
+    }
+
+    public void onSwipeTop() {
+    }
+
+    public void onSwipeBottom() {
+    }
+
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
+    }
 }
