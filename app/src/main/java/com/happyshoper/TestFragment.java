@@ -154,11 +154,9 @@ public final class TestFragment extends Fragment implements OnClickListener {
                     R.layout.home, null);
             //GridView gridView = (GridView) layout.findViewById(R.id.receiptGridView);
             ListView listView = (ListView) layout.findViewById(R.id.receiptListView);
-
             final ImageAdapter listAdapter = new ImageAdapter(context);
             listAdapter.setCategory("hardware");
             listView.setAdapter(listAdapter);
-
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -171,19 +169,19 @@ public final class TestFragment extends Fragment implements OnClickListener {
             takePhoto.setOnClickListener(this);
 
             final ImageView btnShoes = (ImageView)layout.findViewById(R.id.categoryShoes);
-            ImageView btnCloths = (ImageView)layout.findViewById(R.id.categoryClothing);
-            ImageView btnHardware = (ImageView)layout.findViewById(R.id.categoryHardware);
+            final ImageView btnCloths = (ImageView)layout.findViewById(R.id.categoryClothing);
+            final ImageView btnHardware = (ImageView)layout.findViewById(R.id.categoryHardware);
 
             btnShoes.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if(!isShoesSelected){
-                        //btnShoes.setImageDrawable(nuspalvintas);
+                        btnShoes.setImageResource(R.drawable.batas_on);
                         isShoesSelected = true;
                         listAdapter.setCategory("shoes");
                         listAdapter.notifyDataSetChanged();
                     } else {
-                        //btnShoes.setImageDrawable(nenuspalvintas);
+                        btnShoes.setImageResource(R.drawable.batas);
                         isShoesSelected = false;
                         listAdapter.notifyDataSetChanged();
                     }
@@ -194,12 +192,12 @@ public final class TestFragment extends Fragment implements OnClickListener {
                 @Override
                 public void onClick(View v) {
                     if(!isClothsSelected){
-                        //btnShoes.setImageDrawable(nuspalvintas);
+                        btnCloths.setImageResource(R.drawable.maik_on);
                         isClothsSelected = true;
                         listAdapter.setCategory("cloths");
                         listAdapter.notifyDataSetChanged();
                     } else {
-                        //btnShoes.setImageDrawable(nenuspalvintas);
+                        btnCloths.setImageResource(R.drawable.maike);
                         isClothsSelected = false;
                         listAdapter.notifyDataSetChanged();
                     }
@@ -210,12 +208,12 @@ public final class TestFragment extends Fragment implements OnClickListener {
                 @Override
                 public void onClick(View v) {
                     if(!isHardwareSelected){
-                        //btnShoes.setImageDrawable(nuspalvintas);
+                        btnHardware.setImageResource(R.drawable.kompas_on);
                         isHardwareSelected = true;
                         listAdapter.setCategory("hardware");
                         listAdapter.notifyDataSetChanged();
                     } else {
-                        //btnShoes.setImageDrawable(nenuspalvintas);
+                        btnHardware.setImageResource(R.drawable.kompas);
                         isHardwareSelected = false;
                         listAdapter.setCategory("hardware");
                         listAdapter.notifyDataSetChanged();

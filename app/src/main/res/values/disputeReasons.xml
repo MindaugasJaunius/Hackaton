@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="dispute_reasons_prompt">Pasirinkite skundo priežastį</string>
-    <string-array name="dispute_reasons_array">
-        <item>Netinkamos kokybes ne maisto prekes</item>
-        <item>Prekes pirkimo - pardavimo sutartis, sudaryta rysio priemonemis</item>
-        <item>Nesaziningu vartojimo sutarties salygu taikymas</item>
-        <item>Reklamos istatymu reikalavimu pazeidimo</item>
+    <string name="categories_prompt">Pasirinkite kategoriją</string>
+    <string-array name="categories_array">
+        <item>Avalynė</item>
+        <item>Elektronika</item>
+        <item>Drabužiai</item>
     </string-array>
 </resources>
