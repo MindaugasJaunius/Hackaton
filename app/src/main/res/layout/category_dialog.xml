@@ -10,35 +10,39 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:background="@color/hShopper_background">
 
         <CheckBox
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Clothing"
+            android:text="Rūbai"
             android:id="@+id/checkBoxClothingCategory"
             android:textSize="20dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textColor="@color/hShopper_font" />
 
         <CheckBox
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Shoes"
+            android:text="Avalynė"
             android:id="@+id/checkBoxShoesCategory"
             android:layout_below="@+id/savebtn"
             android:layout_alignParentStart="true"
             android:textSize="20dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textColor="@color/hShopper_font" />
 
         <CheckBox
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Electronic Hardware"
+            android:text="Elektronika"
             android:id="@+id/checkBoxHardwareCategory"
             android:layout_below="@+id/checkBoxShoesCategory"
             android:layout_alignParentStart="true"
             android:textSize="20dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textColor="@color/hShopper_font" />
     </LinearLayout>
 
     <RelativeLayout
@@ -46,25 +50,26 @@
         android:layout_height="wrap_content"
         android:layout_alignWithParentIfMissing="false"
         android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:background="@color/hShopper_background">
 
         <Button
             android:id="@+id/savebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:text="Išsaugoti"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="70dp" />
+            android:layout_marginRight="50dp" />
 
         <Button
             android:id="@+id/canbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel"
+            android:text="Atšaukti"
             android:layout_centerHorizontal="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="70dp" />
+            android:layout_marginLeft="50dp" />
     </RelativeLayout>
 
 </RelativeLayout>
