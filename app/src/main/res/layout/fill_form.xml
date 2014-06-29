@@ -10,8 +10,12 @@
         android:layout_height="wrap_content"
         android:text="Parduotuvės pavadinimas"
         android:id="@+id/shopNameTextView"
-        android:textSize="30sp"
-        android:textColor="@color/hShopper_font" />
+        android:textSize="25dp"
+        android:textColor="@color/hShopper_font"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal" />
 
     <EditText
         android:layout_width="match_parent"
@@ -22,8 +26,10 @@
         android:layout_height="wrap_content"
         android:text="Parduotuvės adresas"
         android:id="@+id/shopAddressTextView2"
-        android:textSize="30sp"
-        android:textColor="@color/hShopper_font" />
+        android:textSize="25dp"
+        android:textColor="@color/hShopper_font"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -38,7 +44,8 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:entries="@array/dispute_reasons_array"
-        android:prompt="@string/dispute_reasons_prompt"/>
+        android:prompt="@string/dispute_reasons_prompt"
+        android:gravity="center_horizontal"/>
 
     <RelativeLayout
         android:orientation="horizontal"

@@ -11,17 +11,11 @@
         android:background="@color/hShopper_background"
         android:orientation="vertical">
 
-        <SearchView
-            android:id="@+id/searchAdviceView"
-            android:layout_width="fill_parent"
-            android:layout_height="45dp"
-            android:background="@color/hShopper_extra" />
-
 
         <ScrollView
             android:id="@+id/scrollView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -31,23 +25,80 @@
                 <TextView
                     android:id="@+id/contactTextView1"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="fill_parent"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp"
                     android:background="@drawable/back"
                     android:paddingBottom="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="5dp"
                     android:paddingTop="5dp"
-                    android:text="apsaugos tarnyba"
+                    android:text="Valstybinė vartotojų teisių apsaugos tarnyba"
                     android:textColor="@color/hShopper_font"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:gravity="center_horizontal" />
 
                 <TextView
                     android:id="@+id/contactTextViewContent1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/back"
+                    android:padding="5dp"
+                    android:textColor="@color/hShopper_font"
+                    android:textSize="20dp"
+                    android:singleLine="false"
+                    android:text="Telefonas: 85 3213812\n E-paštas: jonas.petraitis@vvtat.lt"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/contactTextView2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/back"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Valstybinė ne maisto produktų inspekcija"
+                    android:textColor="@color/hShopper_font"
+                    android:textSize="25dp"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/contactTextViewContent2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/back"
+                    android:padding="5dp"
+                    android:textColor="@color/hShopper_font"
+                    android:textSize="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Telefonas: 85 3213812\n E-paštas: jonas.petraitis@malkos.lt"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/contactTextView3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/back"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Europos vartotojų centras"
+                    android:textColor="@color/hShopper_font"
+                    android:textSize="25dp"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:id="@+id/contactTextViewContent3"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="10dp"
@@ -56,65 +107,8 @@
                     android:padding="5dp"
                     android:textColor="@color/hShopper_font"
                     android:textSize="20dp"
-                    android:singleLine="false" />
-
-                <TextView
-                    android:id="@+id/contactTextView2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/back"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:text="Avalynė"
-                    android:textColor="@color/hShopper_font"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/contactTextViewContent2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/back"
-                    android:padding="5dp"
-                    android:textColor="@color/hShopper_font"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/contactTextView3"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/back"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:text="Kiek ilgiausiai gali trukti nekokybiškos prekės garantinis remontas? "
-                    android:textColor="@color/hShopper_font"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/contactTextViewContent3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/back"
-                    android:padding="5dp"
-                    android:textColor="@color/hShopper_font"
-                    android:textSize="20dp" />
+                    android:text="Telefonas: 85 3213812\n E-paštas: john.petraitis@malkos.eu"
+                    android:gravity="center_horizontal" />
 
             </LinearLayout>
         </ScrollView>

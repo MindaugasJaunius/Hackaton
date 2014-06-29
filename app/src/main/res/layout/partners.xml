@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:text="Partners"
+        android:text="Partneriai"
         android:id="@+id/labelPartners"
         android:textSize="25dp"
         android:textIsSelectable="false"
@@ -17,8 +17,9 @@
         android:background="@color/hShopper_extra"
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
-        android:paddingBottom="10dp"
-        android:gravity="center_horizontal" />
+        android:paddingBottom="5dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp" />
 
     <ImageView
         android:layout_width="wrap_content"
