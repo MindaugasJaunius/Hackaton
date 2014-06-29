@@ -32,6 +32,6 @@
         android:layout_height="2dp"
         android:layout_width="fill_parent"
         android:background="#FFFFFF"
-        app:selectedColor="#000000"
+        app:selectedColor="#FF00"
         />
 </LinearLayout>

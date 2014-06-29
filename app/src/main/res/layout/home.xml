@@ -25,22 +25,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/categoryShoes"
-                android:src="@drawable/ic_launcher"
+                android:src="@drawable/batas"
                 android:layout_alignParentRight="false"
-                android:layout_alignParentLeft="true" />
+                android:layout_alignParentLeft="true"
+                android:layout_margin="20dp" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/categoryClothing"
-                android:src="@drawable/ic_launcher"
-                android:layout_centerHorizontal="true" />
+                android:src="@drawable/maike"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/categoryHardware"
                 android:focusableInTouchMode="false"
-                android:src="@drawable/ic_launcher"
-                android:layout_alignParentRight="true" />
+                android:src="@drawable/kompas"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dp" />
             </RelativeLayout>
 
         <ImageView
@@ -50,7 +53,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="false"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/camerblue"/>
 
         <ListView
             android:id="@+id/receiptListView"

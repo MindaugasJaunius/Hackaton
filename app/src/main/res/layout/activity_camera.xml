@@ -5,15 +5,15 @@
     android:background="#999999"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/capturing_image"
-        android:background="@color/hShopper_extra"
-        android:textSize="20dp"
-        android:textColor="@color/vpi__background_holo_light"
-        android:padding="10dp"
-        android:gravity="center_horizontal" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/capturing_image"-->
+        <!--android:background="@color/hShopper_extra"-->
+        <!--android:textSize="20dp"-->
+        <!--android:textColor="@color/vpi__background_holo_light"-->
+        <!--android:padding="10dp"-->
+        <!--android:gravity="center_horizontal" />-->
 
     <FrameLayout
         android:id="@+id/camera_frame"
