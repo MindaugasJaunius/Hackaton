@@ -96,13 +96,19 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         doneButton.setOnClickListener(mDoneButtonClickListener);
 
         mIsCapturing = true;
-        final Toast tag = Toast.makeText(CameraActivity.this, "This shit has to include other stupid shit and don't forget that fucking number also with the line of unusable info",
+        final Toast tag = Toast.makeText(CameraActivity.this, "Įsitikinkite, kad čekis telpa į kameroje nurdorytus rėmelius.\n" +
+                        "Čekyje taip pat turi aiškiai matytis:\n" +
+                        "- Įmonės rekvizitai\n" +
+                        "- kvito numeris\n" +
+                        "- prekės pavadinimas\n" +
+                        "- kaina\n" +
+                        "- data bei laikas.",
                     Toast.LENGTH_LONG);
 
 
         tag.show();
 
-        new CountDownTimer(4000, 1000)
+        new CountDownTimer(2000, 1000)
         {
 
             public void onTick(long millisUntilFinished) {tag.show();}
