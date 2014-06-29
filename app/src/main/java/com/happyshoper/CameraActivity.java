@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.os.Bundle;
@@ -101,7 +102,7 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
 
         tag.show();
 
-        new CountDownTimer(8000, 1000)
+        new CountDownTimer(4000, 1000)
         {
 
             public void onTick(long millisUntilFinished) {tag.show();}
@@ -199,8 +200,10 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
     }
 
     private void setupImageDisplay() {
-        Bitmap bitmap = BitmapFactory.decodeByteArray(mCameraData, 0, mCameraData.length);
-        mCameraImage.setImageBitmap(bitmap);
+        Bitmap source = BitmapFactory.decodeByteArray(mCameraData, 0, mCameraData.length);
+        Matrix matrix = new Matrix();
+        matrix.postRotate(90);
+        mCameraImage.setImageBitmap( Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true));
         mCamera.stopPreview();
         mCameraPreview.setVisibility(View.INVISIBLE);
         mCameraImage.setVisibility(View.VISIBLE);

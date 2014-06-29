@@ -11,14 +11,19 @@
         android:layout_height="fill_parent"
         />
     <Button
-        android:id="@+id/My_btn"
+        android:id="@+id/pdfSign"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:text="Sign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
-
+        />
+    <Button
+        android:id="@+id/pdfBack"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         />
 </RelativeLayout>

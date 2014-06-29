@@ -28,6 +28,11 @@ public class MainActivity extends BaseSampleActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String action = "";
+        if(getIntent().getExtras() != null) {
+            action = getIntent().getExtras().getString("action");
+        }
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -44,6 +49,11 @@ public class MainActivity extends BaseSampleActivity {
         indicator.setFades(false);
         mIndicator = indicator;
         mIndicator.setCurrentItem(1);
+
+        if(action.equalsIgnoreCase("signed")){
+            Toast.makeText(MainActivity.this, "Forma buvo issiusta",
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -52,21 +62,21 @@ public class MainActivity extends BaseSampleActivity {
 //            if (resultCode == RESULT_OK) {
 //                // Recycle the previous bitmap.
 //                if (mCameraBitmap != null) {
-                   // mCameraBitmap.recycle();
+//                   mCameraBitmap.recycle();
 //                    mCameraBitmap = null;
 //                }
 //                Bundle extras = data.getExtras();
 //                byte[] cameraData = extras.getByteArray(CameraActivity.EXTRA_CAMERA_DATA);
 //                if (cameraData != null) {
-//                    mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
-//                    saveImageToFile(openFileForImage());
+                    //mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
+                    //saveImageToFile(openFileForImage());
                     Intent mIntent = new Intent(getApplicationContext(), FullReceiptInfoActivity.class);
                     startActivity(mIntent);
 //                }
 //            } else {
 //                mCameraBitmap = null;
 //            }
-//        }
+       // }
     }
 
 //    private void startImageCapture() {

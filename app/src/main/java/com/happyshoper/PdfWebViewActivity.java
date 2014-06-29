@@ -1,6 +1,7 @@
 package com.happyshoper;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -8,6 +9,7 @@ import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class PdfWebViewActivity extends Activity {
@@ -23,6 +25,29 @@ public class PdfWebViewActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.pdf_web_view);
+
+        Button sign = (Button)findViewById(R.id.pdfSign);
+        Button back = (Button)findViewById(R.id.pdfBack);
+
+        if(!type.equalsIgnoreCase("form")){
+            sign.setVisibility(View.INVISIBLE);
+        }
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(PdfWebViewActivity.this, MainActivity.class);
+                mIntent.putExtra("action", "signed");
+                startActivity(mIntent);
+            }
+        });
 
         myWebView = (WebView) findViewById(R.id.webview);
         WebSettings webSettings = myWebView.getSettings();
