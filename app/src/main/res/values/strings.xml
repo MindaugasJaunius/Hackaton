@@ -5,9 +5,8 @@
     <string name="tab1">tab1</string>
     <string name="tab2">tab2</string>
     <string name="start_image_capture">Take a New Picture</string>
-    <string name="capture_image">Snap it!</string>
-    <string name="save_image">Save Picture</string>
-    <string name="recapture_image">Retake Picture</string>
+    <string name="capture_image">Fotografuoti</string>
+    <string name="recapture_image">Iš naujo </string>
     <string name="capturing_image">Taking New Picture</string>
-    <string name="done">Done</string>
+    <string name="done">Išsaugoti</string>
 </resources>

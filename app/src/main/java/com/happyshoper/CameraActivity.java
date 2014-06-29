@@ -21,6 +21,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,9 +35,14 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
     private Camera mCamera;
     private ImageView mCameraImage;
     private SurfaceView mCameraPreview;
+    private Button mSaveImageButton;
     private Button mCaptureImageButton;
     private byte[] mCameraData;
     private boolean mIsCapturing;
+    //private Spinner mCategoriesDropdown;
+    private ImageView btnShoes;
+    private ImageView btnCloths;
+    private ImageView btnHardware;
 //    Button cust;
     Dialog custom;
     EditText Fname;
@@ -44,6 +51,10 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
     Button canbtn;
     String fname;
     String lname;
+    boolean isShoesSelected = false;
+    boolean isClothsSelected = false;
+    boolean isHardwareSelected = false;
+    RelativeLayout categoryButtons;
 
     private OnClickListener mCaptureImageButtonClickListener = new OnClickListener() {
         @Override
@@ -89,11 +100,57 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         surfaceHolder.addCallback(this);
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
+        //mCategoriesDropdown = (Spinner)findViewById(R.id.categoriesDropdown);
+        categoryButtons = (RelativeLayout)findViewById(R.id.categoryButtons);
+        btnShoes = (ImageView)findViewById(R.id.categoryShoes);
+        btnCloths = (ImageView)findViewById(R.id.categoryClothing);
+        btnHardware = (ImageView)findViewById(R.id.categoryHardware);
+
+        btnShoes.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isShoesSelected){
+                    btnShoes.setImageResource(R.drawable.batas_on);
+                    isShoesSelected = true;
+                } else {
+                    btnShoes.setImageResource(R.drawable.batas);
+                    isShoesSelected = false;
+                }
+            }
+        });
+
+        btnCloths.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isClothsSelected){
+                    btnCloths.setImageResource(R.drawable.maik_on);
+                    isClothsSelected = true;
+
+                } else {
+                    btnCloths.setImageResource(R.drawable.maike);
+                    isClothsSelected = false;
+                }
+            }
+        });
+
+        btnHardware.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isHardwareSelected){
+                    btnHardware.setImageResource(R.drawable.kompas_on);
+                    isHardwareSelected = true;
+                } else {
+                    btnHardware.setImageResource(R.drawable.kompas);
+                    isHardwareSelected = false;
+                }
+            }
+        });
+
         mCaptureImageButton = (Button) findViewById(R.id.capture_image_button);
         mCaptureImageButton.setOnClickListener(mCaptureImageButtonClickListener);
 
-        final Button doneButton = (Button) findViewById(R.id.done_button);
-        doneButton.setOnClickListener(mDoneButtonClickListener);
+        mSaveImageButton = (Button) findViewById(R.id.done_button);
+        mSaveImageButton.setOnClickListener(mDoneButtonClickListener);
 
         mIsCapturing = true;
         final Toast tag = Toast.makeText(CameraActivity.this, "Įsitikinkite, kad čekis telpa į kameroje nurdorytus rėmelius.\n" +
@@ -202,6 +259,11 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         mCameraPreview.setVisibility(View.VISIBLE);
         mCamera.startPreview();
         mCaptureImageButton.setText(R.string.capture_image);
+        mSaveImageButton.setVisibility(View.GONE);
+//        btnCloths.setVisibility(View.GONE);
+//        btnShoes.setVisibility(View.GONE);
+//        btnHardware.setVisibility(View.GONE);
+        categoryButtons.setVisibility(View.GONE);
         mCaptureImageButton.setOnClickListener(mCaptureImageButtonClickListener);
     }
 
@@ -215,6 +277,9 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         mCameraImage.setVisibility(View.VISIBLE);
         mCaptureImageButton.setText(R.string.recapture_image);
         mCaptureImageButton.setOnClickListener(mRecaptureImageButtonClickListener);
+        mSaveImageButton.setVisibility(View.VISIBLE);
+        //mCategoriesDropdown.setVisibility(View.VISIBLE);
+        categoryButtons.setVisibility(View.VISIBLE);
     }
 
 }

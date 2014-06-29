@@ -2,18 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#999999"
+    android:background="@drawable/back"
     android:orientation="vertical" >
-
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/capturing_image"-->
-        <!--android:background="@color/hShopper_extra"-->
-        <!--android:textSize="20dp"-->
-        <!--android:textColor="@color/vpi__background_holo_light"-->
-        <!--android:padding="10dp"-->
-        <!--android:gravity="center_horizontal" />-->
 
     <FrameLayout
         android:id="@+id/camera_frame"
@@ -32,25 +22,75 @@
             android:layout_height="match_parent" />
     </FrameLayout>
 
+    <!--<Spinner-->
+        <!--android:id="@+id/categoriesDropdown"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:entries="@array/categories_array"-->
+        <!--android:prompt="@string/categories_prompt"-->
+        <!--android:visibility="gone"/>-->
+    <RelativeLayout
+        android:id="@+id/categoryButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/categoryShoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="false"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/batas" />
+
+        <ImageView
+            android:id="@+id/categoryClothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/maike" />
+
+        <ImageView
+            android:id="@+id/categoryHardware"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
+            android:focusableInTouchMode="false"
+            android:src="@drawable/kompas" />
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="@color/hShopper_extra"
+        android:background="@color/hShopper_background"
         android:paddingTop="10dp">
 
         <Button
             android:id="@+id/capture_image_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/capture_image" />
+            android:text="@string/capture_image"
+            android:background="@color/hShopper_background"
+            android:textColor="@color/hShopper_font" />
 
         <Button
             android:id="@+id/done_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/done" />
+            android:text="@string/done"
+            android:visibility="gone"
+            android:background="@color/hShopper_background"
+            android:textColor="@color/hShopper_font"/>
     </LinearLayout>
 
 </LinearLayout>
