@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.view.ViewPager;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -37,6 +39,10 @@ public class MainActivity extends BaseSampleActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.simple_underlines);
+
+        int id = this.getResources().getIdentifier("android:id/search_src_text", null, null);
+        TextView textView = (TextView)findViewById(id);
+        textView.setTextColor(Color.BLACK);
 
         mAdapter = new TestFragmentAdapter(getSupportFragmentManager(), getApplicationContext());
         mAdapter.setNotification("moneyIncoming");
