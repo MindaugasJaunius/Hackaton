@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="@color/hShopper_background">
+    android:background="@drawable/top_dropshadow">
 
     <TextView
         android:layout_width="fill_parent"
@@ -50,7 +50,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Vartotojo teises"
+        android:text="Vartotojau, žinok daugiau!"
         android:textSize="40dp"
         android:textColor="@color/hShopper_font"
         android:gravity="center_horizontal"

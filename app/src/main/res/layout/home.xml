@@ -11,7 +11,7 @@
         android:id="@+id/searchReceiptInputView"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/hShopper_background" />
+        android:background="@drawable/back" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
 
         <ImageView
             android:id="@+id/takePhotoButton"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -77,6 +77,7 @@
                 android:textSize="30sp"
                 android:id="@+id/date1"
                 android:background="@drawable/date_background" />
+
         <ListView
             android:id="@+id/receiptListView"
             android:layout_width="match_parent"
