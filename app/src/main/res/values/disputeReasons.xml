@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="dispute_reasons_prompt">Pasirinkite skundo priežastį</string>
     <string-array name="dispute_reasons_array">
         <item>Netinkamos kokybes ne maisto prekes</item>
         <item>Prekes pirkimo - pardavimo sutartis, sudaryta rysio priemonemis</item>

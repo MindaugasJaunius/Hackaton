@@ -43,10 +43,10 @@ public class FillFormActivity extends Activity {
             }
         });
 
-        Spinner spinner = (Spinner) findViewById(R.id.disputeReasonDropdown);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.dispute_reasons_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+//        Spinner spinner = (Spinner) findViewById(R.id.disputeReasonDropdown);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.dispute_reasons_array, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
     }
 }

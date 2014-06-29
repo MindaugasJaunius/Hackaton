@@ -11,7 +11,7 @@
         android:id="@+id/searchReceiptInputView"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/hShopper_extra" />
+        android:background="@color/hShopper_background" />
 
     <RelativeLayout
         android:layout_width="match_parent"
