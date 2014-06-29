@@ -25,7 +25,7 @@
                 <TextView
                     android:id="@+id/contactTextView1"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/back"
                     android:paddingBottom="5dp"
@@ -35,7 +35,7 @@
                     android:text="Valstybinė vartotojų teisių apsaugos tarnyba"
                     android:textColor="@color/hShopper_font"
                     android:textSize="25dp"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center_vertical|center_horizontal" />
 
                 <TextView
                     android:id="@+id/contactTextViewContent1"
@@ -55,7 +55,7 @@
                 <TextView
                     android:id="@+id/contactTextView2"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/back"
                     android:paddingBottom="5dp"
@@ -65,7 +65,7 @@
                     android:text="Valstybinė ne maisto produktų inspekcija"
                     android:textColor="@color/hShopper_font"
                     android:textSize="25dp"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center_vertical|center_horizontal" />
 
                 <TextView
                     android:id="@+id/contactTextViewContent2"
@@ -84,7 +84,7 @@
                 <TextView
                     android:id="@+id/contactTextView3"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/back"
                     android:paddingBottom="5dp"
@@ -94,7 +94,7 @@
                     android:text="Europos vartotojų centras"
                     android:textColor="@color/hShopper_font"
                     android:textSize="25dp"
-                    android:gravity="center_horizontal" />
+                    android:gravity="center_vertical|center_horizontal" />
 
                 <TextView
                     android:id="@+id/contactTextViewContent3"

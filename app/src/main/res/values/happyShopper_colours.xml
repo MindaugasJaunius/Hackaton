@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="hShopper_extra">#000000</color>
-    <color name="hShopper_font">#000000</color>
-    <color name="hShopper_background">#FFFFFF</color>
+    <color name="hShopper_extra">#2a4e69</color>
+    <color name="hShopper_dateBorder">#cd6F06</color>
+    <color name="hShopper_font">#2a4e69</color>
+    <color name="hShopper_background">#E1E8E8</color>
 </resources>

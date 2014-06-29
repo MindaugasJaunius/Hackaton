@@ -57,7 +57,7 @@ public class MainActivity extends BaseSampleActivity {
         mIndicator.setCurrentItem(1);
 
         if(action.equalsIgnoreCase("signed")){
-            Toast.makeText(MainActivity.this, "Forma buvo issiusta",
+            Toast.makeText(MainActivity.this, "Forma buvo išsiųsta",
                     Toast.LENGTH_LONG).show();
         }
     }
