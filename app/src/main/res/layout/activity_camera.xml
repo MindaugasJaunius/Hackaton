@@ -4,7 +4,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:orientation="vertical" >
-
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/home_button"
+    android:layout_gravity="right"
+    android:id="@+id/homeButton"
+    android:layout_margin="15dp" />
     <FrameLayout
         android:id="@+id/camera_frame"
         android:layout_width="match_parent"
@@ -81,7 +87,8 @@
             android:layout_height="wrap_content"
             android:text="@string/capture_image"
             android:background="@color/hShopper_background"
-            android:textColor="@color/hShopper_font" />
+            android:textColor="@color/hShopper_font"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/done_button"
@@ -90,7 +97,8 @@
             android:text="@string/done"
             android:visibility="gone"
             android:background="@color/hShopper_background"
-            android:textColor="@color/hShopper_font"/>
+            android:textColor="@color/hShopper_font"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

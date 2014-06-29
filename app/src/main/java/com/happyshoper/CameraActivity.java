@@ -43,6 +43,7 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
     private ImageView btnShoes;
     private ImageView btnCloths;
     private ImageView btnHardware;
+    private ImageView btnHome;
 //    Button cust;
     Dialog custom;
     EditText Fname;
@@ -101,6 +102,14 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
         //mCategoriesDropdown = (Spinner)findViewById(R.id.categoriesDropdown);
+        btnHome = (ImageView)findViewById(R.id.homeButton);
+        btnHome.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent = new Intent(CameraActivity.this, MainActivity.class);
+                startActivity(mIntent);
+            }
+        });
         categoryButtons = (RelativeLayout)findViewById(R.id.categoryButtons);
         btnShoes = (ImageView)findViewById(R.id.categoryShoes);
         btnCloths = (ImageView)findViewById(R.id.categoryClothing);
