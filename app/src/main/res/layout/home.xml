@@ -58,19 +58,63 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="false"
             android:src="@drawable/camerblue"/>
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/takePhotoButton"
+            android:layout_below="@id/categoryButtons">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/list1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2014 Kovas 12"
+                android:textSize="30sp"
+                android:id="@+id/date1"
+                android:background="@drawable/date_background" />
         <ListView
             android:id="@+id/receiptListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/takePhotoButton"
-            android:layout_below="@id/categoryButtons"
             android:background="#ffffffff"
             android:gravity="center_horizontal"
             android:cacheColorHint="#00000000"
-            android:divider="@drawable/divider" android:dividerHeight="1px">
+            android:divider="@drawable/divider"
+            android:dividerHeight="1px"
+            android:layout_below="@id/date1">
         </ListView>
-
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/list2"
+                android:layout_below="@id/list1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2014 Balandis 25"
+                    android:textSize="30sp"
+                    android:id="@+id/date2"
+                    android:background="@drawable/date_background" />
+                <ListView
+                    android:id="@+id/receiptListView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffffff"
+                    android:gravity="center_horizontal"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@drawable/divider"
+                    android:dividerHeight="1px"
+                    android:layout_below="@id/date2">
+                </ListView>
+            </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
 
     </RelativeLayout>
 </LinearLayout>
