@@ -21,32 +21,12 @@
             android:id="@+id/mostRecentLabel"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
             android:text="Most recent"
             android:textColor="@color/hShopper_background1"
             android:textSize="25dp"
-            android:padding="10dp"
-            android:paddingLeft="20dp"
             android:textStyle="italic" />
-
-        <GridView
-            android:id="@+id/receiptGridView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mostRecentLabel"
-            android:columnWidth="150dp"
-            android:numColumns="1"
-            android:stretchMode="columnWidth"
-            android:gravity="center_horizontal"
-            android:background="#ffffffff"
-            android:layout_alignParentEnd="false"
-            android:fastScrollAlwaysVisible="false"
-            android:textFilterEnabled="false"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentBottom="false"
-            android:layout_alignParentRight="false"
-            android:layout_alignWithParentIfMissing="false"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentTop="false" />
 
         <ImageView
             android:id="@+id/takePhotoButton"
@@ -56,6 +36,20 @@
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="false"
             android:src="@drawable/ic_launcher" />
+
+        <GridView
+            android:id="@+id/receiptGridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/takePhotoButton"
+            android:layout_below="@id/mostRecentLabel"
+            android:background="#ffffffff"
+            android:columnWidth="150dp"
+            android:gravity="center_horizontal"
+            android:numColumns="1"
+            android:stretchMode="columnWidth">
+
+        </GridView>
 
 
     </RelativeLayout>

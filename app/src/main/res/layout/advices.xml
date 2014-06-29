@@ -1,185 +1,215 @@
-<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/viewswitcher"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/hShopper_background4"
-    android:orientation="vertical">
+    android:layout_height="fill_parent">
 
-    <SearchView
-        android:id="@+id/searchAdviceView"
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        android:background="@color/hShopper_background1" />
-
-
-    <ScrollView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView" >
+        android:layout_alignParentBottom="true"
+        android:id="@+id/actionButtons">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FAQ"
+            android:id="@+id/switchToFaq"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategorijos"
+            android:id="@+id/switchToCategories"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <ViewSwitcher
+        android:id="@+id/viewswitcher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/actionButtons">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:background="@color/hShopper_background4"
             android:orientation="vertical">
-    <TextView
-        android:id="@+id/adviceTextView1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/back"
-        android:text="Vartotojas turi teisę"
-        android:textColor="@color/hShopper_background1"
-        android:textSize="25dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="5dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1) savo nuožiūra įsigyti ir naudoti prekes ir paslaugas \n2) įsigyti saugias, tinkamos kokybės prekes ar paslaugas \n3) gauti teisingą ir visapusišką informaciją valstybine kalba apie parduodamas prekes, teikiamas   paslaugas  \n4) į pažeistų teisių gynimą  \n5) gauti informaciją apie savo teisių įgyvendinimo ir gynimo tvarką"
-        android:id="@+id/adviceTextViewContent1"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
-        android:background="@drawable/back"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:padding="5dp"
-        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark" />
+            <SearchView
+                android:id="@+id/searchAdviceView"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:background="@color/hShopper_background1" />
 
-    <TextView
-        android:id="@+id/adviceTextView2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/back"
-        android:text="Tinkamos kokybės ne maisto prekės"
-        android:textColor="@color/hShopper_background1"
-        android:textSize="25dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="5dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1) Vartotojas pateikęs prekės įsigijimą patvirtinantį dokumentą, turi teisę per 14 dienų grąžinti  (išskyrus tinkamos kokybės prekes, kurios patenka į nekeičiamų ir negrąžinamų prekių sąrašą*)   nenaudotas, nedėvėtas, su ženklinimo etiketėmis, nesugadintas ir nepraradusias prekinės   išvaizdos prekes, netinkančias vartotojui dėl formos, spalvos, dydžio, komplektiškumo (pvz.,   avalynė, viršutiniai rūbai, galanteriniai gaminiai ir kt.)  \n2) Naudotos prekės, įsigytos specializuotose (tik naudotoms prekėms skirtose) parduotuvėse,   turgavietėse ir kitose nustatytose viešosiose vietose, taip pat sveriamos ir matuojamos prekės,   kurios vartotojo pageidavimu buvo specialiai paruoštos, atpjautos, supjaustytos ir pan., gali būti   keičiamos ar grąžinamos tik pardavėjui sutikus"
-        android:id="@+id/adviceTextViewContent2"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/back"
-        android:padding="5dp"
-        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark" />
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/adviceTextView3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/back"
-        android:text="Nekeičiamos ir negrąžinamos tinkamos kokybės ne maisto prekės"
-        android:textColor="@color/hShopper_background1"
-        android:textSize="25dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:paddingRight="5dp" />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="• Parfumerijos, kosmetikos ir tualetiniai gaminiai\n• Fotografijos ir kinematografijos prekės, spausdintos knygos, reprodukcijos ir kiti poligrafijos pramonės dirbiniai \n• Audiniai, kiliminės grindų dangos, išskyrus kilimus ir kilimėlius\n• Megzti ar/ir siūti vyriški, berniukų, moteriški arba mergaičių apatiniai drabužiai, naktiniai marškiniai,pižamos ir panašūs dirbiniai\n• Kūdikių drabužėliai\n• Pėdkelnės, kojinės, puskojinės ir kiti panašūs dirbiniai\n• Liemenėlės, juosmenys, korsetai ir panašūs dirbiniai\n• Perlai, brangakmeniai, taurieji metalai bei jų dirbiniai, išskyrus dirbtinę bižuteriją\n• Mašinos ir mechaniniai įrenginiai, elektros mašinos ir įrenginiai\n• Garso įrašymo ir atkūrimo bei televizijos vaizdo ir garso įrašymo ir atkūrimo aparatai\n• Antžeminio transporto priemonės, laivai, valtys ir plaukiojantys įrenginiai\n• Optikos, fotografijos, kinematografijos, matavimo, kontrolės, medicinos arba chirurgijos prietaisai ir aparatai\n• Laikrodžiai\n• Muzikos instrumentai\n• Ginklai ir šaudmenys\n• Baldai, patalynės reikmenys, šviestuvai\n• Žaislai, žaidimai, išskyrus sporto ir meškeriojimo reikmenis"
-        android:id="@+id/adviceTextViewContent3"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/back"
-        android:padding="5dp"
-        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark" />
+                    <TextView
+                        android:id="@+id/adviceTextView1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/back"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Vartotojas turi teisę"
+                        android:textColor="@color/hShopper_background1"
+                        android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/adviceTextView4"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/back"
-        android:text="Kai nenustatytas prekės kokybės garantijos terminas"
-        android:textColor="@color/hShopper_background1"
-        android:textSize="25dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="5dp" />
+                    <TextView
+                        android:id="@+id/adviceTextViewContent1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/back"
+                        android:padding="5dp"
+                        android:text="1) savo nuožiūra įsigyti ir naudoti prekes ir paslaugas \n2) įsigyti saugias, tinkamos kokybės prekes ar paslaugas \n3) gauti teisingą ir visapusišką informaciją valstybine kalba apie parduodamas prekes, teikiamas   paslaugas  \n4) į pažeistų teisių gynimą  \n5) gauti informaciją apie savo teisių įgyvendinimo ir gynimo tvarką"
+                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textSize="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vartotojas reikalavimus dėl prekės  trūkumų gali pareikšti per protingą terminą, bet ne vėliau kaip per 2 metus nuo prekės perdavimo dienos"
-        android:id="@+id/adviceTextViewContent4"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/back"
-        android:padding="5dp"
-        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark" />
+                    <TextView
+                        android:id="@+id/adviceTextView2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/back"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Tinkamos kokybės ne maisto prekės"
+                        android:textColor="@color/hShopper_background1"
+                        android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/adviceTextView5"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/back"
-        android:text="Kaip kreiptis į pardavėją, įsigijus netinkamos kokybės prekę?"
-        android:textColor="@color/hShopper_background1"
-        android:textSize="25dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="5dp" />
+                    <TextView
+                        android:id="@+id/adviceTextViewContent2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/back"
+                        android:padding="5dp"
+                        android:text="1) Vartotojas pateikęs prekės įsigijimą patvirtinantį dokumentą, turi teisę per 14 dienų grąžinti  (išskyrus tinkamos kokybės prekes, kurios patenka į nekeičiamų ir negrąžinamų prekių sąrašą*)   nenaudotas, nedėvėtas, su ženklinimo etiketėmis, nesugadintas ir nepraradusias prekinės   išvaizdos prekes, netinkančias vartotojui dėl formos, spalvos, dydžio, komplektiškumo (pvz.,   avalynė, viršutiniai rūbai, galanteriniai gaminiai ir kt.)  \n2) Naudotos prekės, įsigytos specializuotose (tik naudotoms prekėms skirtose) parduotuvėse,   turgavietėse ir kitose nustatytose viešosiose vietose, taip pat sveriamos ir matuojamos prekės,   kurios vartotojo pageidavimu buvo specialiai paruoštos, atpjautos, supjaustytos ir pan., gali būti   keičiamos ar grąžinamos tik pardavėjui sutikus"
+                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textSize="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vartotojas, įsigijęs netinkamos kokybės prekę, pastebėjęs prekės kokybės trūkumus ir manydamas, kad jo teisės buvo pažeistos, į pardavėją, nurodydamas savo reikalavimą, kreipiasi raštu"
-        android:id="@+id/adviceTextViewContent5"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/back"
-        android:padding="5dp"
-        android:singleLine="false" />
+                    <TextView
+                        android:id="@+id/adviceTextView3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/back"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Nekeičiamos ir negrąžinamos tinkamos kokybės ne maisto prekės"
+                        android:textColor="@color/hShopper_background1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/adviceTextViewContent3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/back"
+                        android:padding="5dp"
+                        android:text="• Parfumerijos, kosmetikos ir tualetiniai gaminiai\n• Fotografijos ir kinematografijos prekės, spausdintos knygos, reprodukcijos ir kiti poligrafijos pramonės dirbiniai \n• Audiniai, kiliminės grindų dangos, išskyrus kilimus ir kilimėlius\n• Megzti ar/ir siūti vyriški, berniukų, moteriški arba mergaičių apatiniai drabužiai, naktiniai marškiniai,pižamos ir panašūs dirbiniai\n• Kūdikių drabužėliai\n• Pėdkelnės, kojinės, puskojinės ir kiti panašūs dirbiniai\n• Liemenėlės, juosmenys, korsetai ir panašūs dirbiniai\n• Perlai, brangakmeniai, taurieji metalai bei jų dirbiniai, išskyrus dirbtinę bižuteriją\n• Mašinos ir mechaniniai įrenginiai, elektros mašinos ir įrenginiai\n• Garso įrašymo ir atkūrimo bei televizijos vaizdo ir garso įrašymo ir atkūrimo aparatai\n• Antžeminio transporto priemonės, laivai, valtys ir plaukiojantys įrenginiai\n• Optikos, fotografijos, kinematografijos, matavimo, kontrolės, medicinos arba chirurgijos prietaisai ir aparatai\n• Laikrodžiai\n• Muzikos instrumentai\n• Ginklai ir šaudmenys\n• Baldai, patalynės reikmenys, šviestuvai\n• Žaislai, žaidimai, išskyrus sporto ir meškeriojimo reikmenis"
+                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/adviceTextView4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/back"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Kai nenustatytas prekės kokybės garantijos terminas"
+                        android:textColor="@color/hShopper_background1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/adviceTextViewContent4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/back"
+                        android:padding="5dp"
+                        android:text="Vartotojas reikalavimus dėl prekės  trūkumų gali pareikšti per protingą terminą, bet ne vėliau kaip per 2 metus nuo prekės perdavimo dienos"
+                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/adviceTextView5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/back"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Kaip kreiptis į pardavėją, įsigijus netinkamos kokybės prekę?"
+                        android:textColor="@color/hShopper_background1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/adviceTextViewContent5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/back"
+                        android:padding="5dp"
+                        android:singleLine="false"
+                        android:text="Vartotojas, įsigijęs netinkamos kokybės prekę, pastebėjęs prekės kokybės trūkumus ir manydamas, kad jo teisės buvo pažeistos, į pardavėją, nurodydamas savo reikalavimą, kreipiasi raštu"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
-    </ScrollView>
 
-</LinearLayout>
-
-    <include layout="@layout/categories" />
+        <include layout="@layout/categories" />
     </ViewSwitcher>
+
+
+</RelativeLayout>

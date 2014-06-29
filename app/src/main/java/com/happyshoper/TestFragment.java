@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -23,16 +24,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
-public final class TestFragment extends Fragment implements OnClickListener, View.OnTouchListener {
+public final class TestFragment extends Fragment implements OnClickListener {
     private static final String KEY_CONTENT = "TestFragment:Content";
     private static final String[] MOBILE_OS = new String[] {
             "Android", "iOS","Windows", "Blackberry" };
     private Context context;
     private String mContent = "???";
     private Animation slide_in_left, slide_out_right;
-    private ViewSwitcher viewSwitcher;
-    private GestureDetector gestureDetector;
-
+    boolean switchedToCategories = false;
 
     public static TestFragment newInstance(String content, Context context) {
         TestFragment fragment = new TestFragment();
@@ -70,7 +69,7 @@ public final class TestFragment extends Fragment implements OnClickListener, Vie
             return inflater.inflate(
                     R.layout.partners, null);
         } else if(mContent.equalsIgnoreCase("advices")) {
-            ViewSwitcher layoutAdvices = (ViewSwitcher) inflater.inflate(
+            RelativeLayout layoutAdvices = (RelativeLayout) inflater.inflate(
                     R.layout.advices, null);
             TextView textView1 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView1);
             TextView textView2 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView2);
@@ -96,20 +95,39 @@ public final class TestFragment extends Fragment implements OnClickListener, Vie
             expandAdvice(textView4, textViewContent4);
             expandAdvice(textView5, textViewContent5);
 
-            //viewSwitcher = (ViewSwitcher) layoutAdvices.findViewById(R.id.viewswitcher);
+            final ViewSwitcher viewSwitcher = (ViewSwitcher) layoutAdvices.findViewById(R.id.viewswitcher);
 
             slide_in_left = AnimationUtils.loadAnimation(context,
                     android.R.anim.slide_in_left);
             slide_out_right = AnimationUtils.loadAnimation(context,
                     android.R.anim.slide_out_right);
 
-            layoutAdvices.setInAnimation(slide_in_left);
-            layoutAdvices.setOutAnimation(slide_out_right);
+            viewSwitcher.setInAnimation(slide_in_left);
+            viewSwitcher.setOutAnimation(slide_out_right);
 
-            gestureDetector = new GestureDetector(context, new GestureListener());
+            Button faq = (Button)layoutAdvices.findViewById(R.id.switchToFaq);
+            Button categories = (Button)layoutAdvices.findViewById(R.id.switchToCategories);
 
-            layoutAdvices.setOnTouchListener(this);
-            viewSwitcher = layoutAdvices;
+            faq.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(switchedToCategories) {
+                        viewSwitcher.showPrevious();
+                        switchedToCategories=false;
+                    }
+                }
+            });
+
+            categories.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!switchedToCategories) {
+                        viewSwitcher.showNext();
+                        switchedToCategories=true;
+                    }
+                }
+            });
+
             return layoutAdvices;
 
         } else {
@@ -200,63 +218,4 @@ public final class TestFragment extends Fragment implements OnClickListener, Vie
         }
     }
 
-    private final class GestureListener extends GestureDetector.SimpleOnGestureListener {
-
-        private static final int SWIPE_THRESHOLD = 100;
-        private static final int SWIPE_VELOCITY_THRESHOLD = 100;
-
-        @Override
-        public boolean onDown(MotionEvent e) {
-            return true;
-        }
-
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            boolean result = false;
-            try {
-                float diffY = e2.getY() - e1.getY();
-                float diffX = e2.getX() - e1.getX();
-                if (Math.abs(diffX) > Math.abs(diffY)) {
-                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
-                        if (diffX > 0) {
-                            onSwipeRight();
-                        } else {
-                            onSwipeLeft();
-                        }
-                    }
-                } else {
-                    if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
-                        if (diffY > 0) {
-                            onSwipeBottom();
-                        } else {
-                            onSwipeTop();
-                        }
-                    }
-                }
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-            return result;
-        }
-    }
-
-    public void onSwipeRight() {
-        viewSwitcher.showNext();
-    }
-
-    public void onSwipeLeft() {
-        viewSwitcher.showPrevious();
-    }
-
-    public void onSwipeTop() {
-    }
-
-    public void onSwipeBottom() {
-    }
-
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        return gestureDetector.onTouchEvent(event);
-    }
 }
