@@ -72,7 +72,8 @@ public final class TestFragment extends Fragment implements OnClickListener {
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Log.w("happy shoper", "RECEIPT CLICKED");
+                    Intent mIntent = new Intent(context, FullReceiptInfoActivity.class);
+                    startActivity(mIntent);
                 }
             });
 
