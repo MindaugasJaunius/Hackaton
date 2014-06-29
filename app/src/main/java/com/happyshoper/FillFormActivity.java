@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 /**
@@ -40,5 +42,11 @@ public class FillFormActivity extends Activity {
                 startActivity(mIntent);
             }
         });
+
+        Spinner spinner = (Spinner) findViewById(R.id.disputeReasonDropdown);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.dispute_reasons_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
     }
 }

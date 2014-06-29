@@ -13,7 +13,6 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -38,7 +37,6 @@ public class FullReceiptInfoActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.full_receipt_info);
 
-        //layout = (LinearLayout)findViewById(R.id.fullReceiptLayout);
         TextView userRights = (TextView)findViewById(R.id.userRights);
         userRights.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +53,14 @@ public class FullReceiptInfoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 showCategoryDialog();
+            }
+        });
+        ImageView imageView = (ImageView) findViewById(R.id.fillReturnFormButton);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(FullReceiptInfoActivity.this, FillFormActivity.class);
+                startActivity(mIntent);
             }
         });
 
