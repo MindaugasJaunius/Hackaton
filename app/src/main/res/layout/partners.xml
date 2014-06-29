@@ -17,14 +17,13 @@
         android:background="@color/hShopper_extra"
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
-        android:paddingBottom="5dp"
         android:gravity="center_horizontal"
         android:paddingTop="5dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:id="@+id/userRights"
         android:layout_below="@+id/labelPartners"
         android:layout_alignParentStart="true"
         android:src="@drawable/audimas"
@@ -33,18 +32,18 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:id="@+id/returnHomeButton"
         android:layout_below="@+id/labelPartners"
-        android:layout_toRightOf="@+id/imageView"
+        android:layout_toRightOf="@+id/userRights"
         android:src="@drawable/baltameska"
         android:layout_margin="5dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
+        android:id="@+id/selectCategory"
         android:layout_below="@+id/labelPartners"
-        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/returnHomeButton"
         android:src="@drawable/bmsmegapolis"
         android:layout_margin="5dp" />
 
@@ -52,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/userRights"
         android:layout_alignParentStart="true"
         android:src="@drawable/celio"
         android:layout_margin="5dp" />
@@ -61,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView5"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/returnHomeButton"
         android:layout_toRightOf="@+id/imageView4"
         android:src="@drawable/danija"
         android:layout_margin="5dp" />

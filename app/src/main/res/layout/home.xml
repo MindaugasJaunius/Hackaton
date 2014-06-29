@@ -4,18 +4,18 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="bottom"
-    android:background="@drawable/back"
     android:orientation="vertical">
 
     <SearchView
         android:id="@+id/searchReceiptInputView"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@drawable/back" />
+        android:background="@color/hShopper_background" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/hShopper_background">
 
         <RelativeLayout
             android:id="@+id/categoryButtons"

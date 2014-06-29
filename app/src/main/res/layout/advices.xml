@@ -60,13 +60,13 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/back"
+                        android:background="@drawable/rounded_corners"
                         android:paddingBottom="5dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Kokias teises turi vartotojas įsigijęs išsimokėtinai nekokybišką prekę?"
-                        android:textColor="@color/hShopper_font"
+                        android:textColor="#fff"
                         android:textSize="25dp" />
 
                     <TextView
@@ -76,7 +76,6 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/back"
                         android:padding="5dp"
                         android:text="Vartotojų teises reglamentuoja Lietuvos Respublikos vartotojų teisių apsaugos įstatymo 3 straipsnis. Viena jų – vartotojai turi teisę įsigyti saugias, tinkamos kokybės prekes ar paslaugas. Pardavėjo teikiama kokybės garantija negali varžyti vartotojų teisių, kurias, įsigijus netinkamos kokybės prekę ar paslaugą, jiems nustato teisės aktai.
 Daiktai, įsigyti išsimokėtinai, keičiami ir grąžinami vadovaujantis Lietuvos Respublikos ūkio ministro 2001 m. birželio 29 d. įsakymu patvirtintomis Daiktų grąžinimo ir keitimo taisyklėmis, pagal kurias, jeigu pirkėjui buvo parduota netinkamos kokybės ne maisto prekė ir pardavėjas su pirkėju neaptarė jos trūkumų, pirkėjas turi teisę savo pasirinkimu iš pardavėjo reikalauti: 1) pakeisti netinkamos kokybės prekę tinkamos kokybės preke; 2) atitinkamai sumažinti prekės kainą; 3) per protingą terminą neatlygintinai pašalinti prekės trūkumus; 4) atlyginti prekės trūkumų pašalinimo išlaidas, jeigu pardavėjui per protingą terminą jų nepašalinus trūkumus pašalino vartotojas pats ar trečiųjų asmenų padedamas; 5) vienašališkai nutraukti pirkimo–pardavimo sutartį ir pareikalauti grąžinti už prekę sumokėtus pinigus.
@@ -92,7 +91,7 @@ Jeigu vartotojo teisės buvo pažeistos, jis turi teisę kreiptis į Valstybinę
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/back"
+                        android:background="@drawable/rounded_corners_2"
                         android:paddingBottom="5dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="5dp"
@@ -108,7 +107,6 @@ Jeigu vartotojo teisės buvo pažeistos, jis turi teisę kreiptis į Valstybinę
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/back"
                         android:padding="5dp"
                         android:text="Pardavėjas, vadovaujantis Civilinio kodekso 6.353 straipsniu, etiketėse ar kitu būdu privalo suteikti pirkėjui būtiną, teisingą ir visapusišką informaciją apie parduodamus daiktus. Prie tokios informacijos priskiriama ir daikto kaina (įskaičius visus mokesčius). Tas pats straipsnis numato, jog pardavėjas, pažeidęs šią pareigą, turi atlyginti dėl to pirkėjo patirtus nuostolius.
 Taip pat pažymėtina, kad informacija apie parduodamus daiktus (įskaitant jų kainą) neturi būti klaidinanti. Tai privalo užtikrinti pardavėjas. Civilinio kodekso 6.353 straipsnio 3 dalis numato, kad nurodyti kiekvieno daikto ar vienos rūšies daiktų pardavimo kainą ir to daikto tinkamo standartinio vieneto kainą (pvz.  sveriamų prekių kilogramo kainą) yra privaloma pareiga pardavėjui.
@@ -125,13 +123,13 @@ Vartotojo – pirkėjo teisės tuomet, kai pardavėjas nevykdo arba netinkamai v
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/back"
+                        android:background="@drawable/rounded_corners"
                         android:paddingBottom="5dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Kiek ilgiausiai gali trukti nekokybiškos prekės garantinis remontas? "
-                        android:textColor="@color/hShopper_font"
+                        android:textColor="#fff"
                         android:textSize="25dp" />
 
                     <TextView
@@ -141,7 +139,6 @@ Vartotojo – pirkėjo teisės tuomet, kai pardavėjas nevykdo arba netinkamai v
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/back"
                         android:padding="5dp"
                         android:text="Vadovaujantis Civilinio kodekso 6.363 straipsniu, pardavėjas prekės trūkumus turi pašalinti per protingą terminą. Taigi, teisės aktai neapibrėžia konkretaus termino, per kurį turi būti pataisyta pristatyta prekė, kadangi tai priklauso nuo daikto pobūdžio, taisytinų trūkumų sudėtingumo ir kitų aplinkybių, kurios kiekvienu atveju yra individualios. Jeigu toks terminas buvo numatytas garantijos dokumente, ar viešai skelbiamas prekės priėmimo remontui vietose, tuomet pardavėjas ar jo įgaliotas asmuo turi jo laikytis. Pardavėjui ar jo įgaliotam asmeniui nevykdant įsipareigojimo per numatytą ar per protingumo kriterijus atitinkantį terminą pataisyti prekės, vartotojas turėtų į kreiptis rašytine forma. "
                         android:textColor="@color/hShopper_font"
@@ -156,12 +153,12 @@ Vartotojo – pirkėjo teisės tuomet, kai pardavėjas nevykdo arba netinkamai v
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/back"
+                        android:background="@drawable/rounded_corners_2"
                         android:paddingBottom="5dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
-                        android:text="Kai nenustatytas prekės kokybės garantijos terminas"
+                        android:text="Nusipirkau prekę iš vienos įmonės, tačiau prekei sugedus pardavėjas reikalavimus reikšti nukreipė į garantinio remonto servisą, ar pardavėjas teisus? "
                         android:textColor="@color/hShopper_font"
                         android:textSize="25dp" />
 
@@ -172,9 +169,9 @@ Vartotojo – pirkėjo teisės tuomet, kai pardavėjas nevykdo arba netinkamai v
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/back"
                         android:padding="5dp"
-                        android:text="Vartotojas reikalavimus dėl prekės  trūkumų gali pareikšti per protingą terminą, bet ne vėliau kaip per 2 metus nuo prekės perdavimo dienos"
+                        android:text="Vadovaujantis Civilinio kodekso nuostatomis, daiktų kokybę visais atvejais garantuoja ne garantinio remonto įmonė, o pardavėjas (tai yra garantija pagal įstatymą, kuri numatyta Civilinio kodekso 6.363 straipsnio 1 dalyje). Todėl ir reikalavimai, susiję su prekės kokybe turi būti pareikšti pardavėjui. Garantijos sąlygose gali būti nustatyta sąlyga, kad dėl prekės trūkumų šalinimo reikia kreiptis į trečiuosius asmenis (pvz. į garantinio aptarnavimo įmonę). Tačiau, vadovaujantis minėta garantija pagal įstatymą, už tinkamą teisėto vartotojo reikalavimo vykdymą atsakinga daiktą pardavusi įmonė.
+Su Daiktų keitimo ir grąžinimo taisyklėmis galima susipažinti"
                         android:textColor="@color/hShopper_font"
                         android:textSize="20dp" />
 
@@ -187,13 +184,13 @@ Vartotojo – pirkėjo teisės tuomet, kai pardavėjas nevykdo arba netinkamai v
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/back"
+                        android:background="@drawable/rounded_corners"
                         android:paddingBottom="5dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Garantinio termino metu sugedus prekei, ji buvo pakeista tinkamos kokybės preke. Ar pakeistai prekei garantijos terminas skaičiuojamas iš naujo, ar taikomas tik likęs terminas? "
-                        android:textColor="@color/hShopper_font"
+                        android:textColor="#fff"
                         android:textSize="25dp" />
 
                     <TextView
@@ -203,7 +200,6 @@ Vartotojo – pirkėjo teisės tuomet, kai pardavėjas nevykdo arba netinkamai v
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/back"
                         android:padding="5dp"
                         android:singleLine="false"
                         android:text="Civilinio kodekso 6.335 straipsnio 6 dalyje numatyta, kad tuo atveju, kai pardavėjas pakeičia daiktą per nustatytą kokybės garantijos terminą, tai naujam daiktui taikomas toks pat kokybės garantijos terminas, koks buvo nustatytas ir įsigytam daiktui, jeigu sutartis nenumato ko kita. Taigi, visų pirma turėtų būti atkreipiamas dėmesys į įsigytos prekės garantijos sąlygas, susijusias su jos pratęsimu arba nepratęsimu netinkamos kokybės daiktą pakeitus kokybišku. Jeigu garantijos taisyklėse ar kitame vartotojui pateiktame dokumente nėra numatyta, kad netinkamos kokybės prekę pakeitus tinkamos kokybės preke, pakeistajai taikomas likęs garantijos terminas, tokiu atveju į pardavėją turite teisę kreiptis per Jūsų įsigytai prekei nustatytą garantijos terminą. "
