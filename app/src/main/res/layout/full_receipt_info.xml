@@ -29,14 +29,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="New Text" />
+        android:text="Avalyne"
+        android:textSize="50sp"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:id="@+id/userRights"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="New Text" />
+        android:text="Vartotojo teises"
+        android:textSize="50sp"
+        android:layout_marginTop="20dp" />
 
 
 </LinearLayout>

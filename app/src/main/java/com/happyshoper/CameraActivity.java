@@ -3,6 +3,7 @@ package com.happyshoper;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,7 +18,9 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CameraActivity extends Activity implements PictureCallback, SurfaceHolder.Callback {
@@ -32,6 +35,14 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
     private Button mCaptureImageButton;
     private byte[] mCameraData;
     private boolean mIsCapturing;
+//    Button cust;
+    Dialog custom;
+    EditText Fname;
+    EditText Lname;
+    Button savebtn;
+    Button canbtn;
+    String fname;
+    String lname;
 
     private OnClickListener mCaptureImageButtonClickListener = new OnClickListener() {
         @Override
@@ -196,4 +207,32 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         mCaptureImageButton.setText(R.string.recapture_image);
         mCaptureImageButton.setOnClickListener(mRecaptureImageButtonClickListener);
     }
+
+    private void showCategoryDialog(){
+        custom = new Dialog(CameraActivity.this);
+        custom.setContentView(R.layout.category_dialog);
+        Fname = (EditText)custom.findViewById(R.id.fname);
+        Lname = (EditText)custom.findViewById(R.id.lname);
+        savebtn = (Button)custom.findViewById(R.id.savebtn);
+        canbtn = (Button)custom.findViewById(R.id.canbtn);
+        custom.setTitle("Custom Dialog");
+        savebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Auto-generated method stub
+                fname = Fname.getText().toString();
+                lname = Lname.getText().toString();
+                custom.dismiss();
+            }
+        });
+        canbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Auto-generated method stub
+                custom.dismiss();
+            }
+        });
+        custom.show();
+    }
+
 }

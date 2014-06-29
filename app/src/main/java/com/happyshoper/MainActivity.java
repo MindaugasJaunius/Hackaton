@@ -33,7 +33,7 @@ public class MainActivity extends BaseSampleActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.simple_underlines);
 
-        mAdapter = new TestFragmentAdapter(getSupportFragmentManager(), this);
+        mAdapter = new TestFragmentAdapter(getSupportFragmentManager(), getApplicationContext());
         mAdapter.setNotification("moneyIncoming");
 
         mPager = (ViewPager)findViewById(R.id.pager);
@@ -48,28 +48,30 @@ public class MainActivity extends BaseSampleActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == TAKE_PICTURE_REQUEST_B) {
-            if (resultCode == RESULT_OK) {
-                // Recycle the previous bitmap.
-                if (mCameraBitmap != null) {
-                    mCameraBitmap.recycle();
-                    mCameraBitmap = null;
-                }
-                Bundle extras = data.getExtras();
-                byte[] cameraData = extras.getByteArray(CameraActivity.EXTRA_CAMERA_DATA);
-                if (cameraData != null) {
-                    mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
-                    saveImageToFile(openFileForImage());
-                }
-            } else {
-                mCameraBitmap = null;
-            }
-        }
+//        if (requestCode == TAKE_PICTURE_REQUEST_B) {
+//            if (resultCode == RESULT_OK) {
+//                // Recycle the previous bitmap.
+//                if (mCameraBitmap != null) {
+                   // mCameraBitmap.recycle();
+//                    mCameraBitmap = null;
+//                }
+//                Bundle extras = data.getExtras();
+//                byte[] cameraData = extras.getByteArray(CameraActivity.EXTRA_CAMERA_DATA);
+//                if (cameraData != null) {
+//                    mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
+//                    saveImageToFile(openFileForImage());
+                    Intent mIntent = new Intent(getApplicationContext(), FullReceiptInfoActivity.class);
+                    startActivity(mIntent);
+//                }
+//            } else {
+//                mCameraBitmap = null;
+//            }
+//        }
     }
 
-    private void startImageCapture() {
-        startActivityForResult(new Intent(MainActivity.this, CameraActivity.class), TAKE_PICTURE_REQUEST_B);
-    }
+//    private void startImageCapture() {
+//        startActivityForResult(new Intent(MainActivity.this, CameraActivity.class), TAKE_PICTURE_REQUEST_B);
+//    }
 
     private File openFileForImage() {
         File imageDirectory = null;
