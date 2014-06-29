@@ -4,36 +4,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <EditText
-        android:id="@+id/fname"
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/linearLayout">
+
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Clothing"
+            android:id="@+id/checkBoxClothingCategory"
+            android:textSize="20dp"
+            android:padding="10dp" />
+
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Shoes"
+            android:id="@+id/checkBoxShoesCategory"
+            android:layout_below="@+id/savebtn"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:padding="10dp" />
+
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Electronic Hardware"
+            android:id="@+id/checkBoxHardwareCategory"
+            android:layout_below="@+id/checkBoxShoesCategory"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="First Name" >
-    </EditText>
-    <EditText
-        android:id="@+id/lname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fname"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="Last name" />
-    <Button
-        android:id="@+id/savebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/canbtn"
-        android:layout_alignBottom="@+id/canbtn"
-        android:layout_alignRight="@+id/lname"
-        android:text="Save" />
-    <Button
-        android:id="@+id/canbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lname"
-        android:layout_below="@+id/lname"
-        android:text="Cancel" />
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/savebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="70dp" />
+
+        <Button
+            android:id="@+id/canbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="70dp" />
+    </RelativeLayout>
+
 </RelativeLayout>

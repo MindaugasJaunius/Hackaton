@@ -8,7 +8,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/capturing_image" />
+        android:text="@string/capturing_image"
+        android:background="@color/hShopper_background1"
+        android:textSize="20dp"
+        android:textColor="@color/vpi__background_holo_light"
+        android:padding="10dp"
+        android:gravity="center_horizontal" />
 
     <FrameLayout
         android:id="@+id/camera_frame"
@@ -30,9 +35,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:background="@color/hShopper_background1"
+        android:paddingTop="10dp">
 
         <Button
             android:id="@+id/capture_image_button"

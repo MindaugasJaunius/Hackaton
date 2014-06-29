@@ -11,6 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,8 +20,9 @@ import android.widget.TextView;
  */
 public class FullReceiptInfoActivity extends Activity {
     Dialog custom;
-    EditText Fname;
-    EditText Lname;
+    CheckBox checkClothing;
+    CheckBox checkShoes;
+    CheckBox checkHardware;
     Button savebtn;
     Button canbtn;
     String fname;
@@ -57,17 +59,16 @@ public class FullReceiptInfoActivity extends Activity {
     private void showCategoryDialog(){
         custom = new Dialog(FullReceiptInfoActivity.this);
         custom.setContentView(R.layout.category_dialog);
-        Fname = (EditText)custom.findViewById(R.id.fname);
-        Lname = (EditText)custom.findViewById(R.id.lname);
+        checkClothing = (CheckBox) custom.findViewById(R.id.checkBoxClothingCategory);
+        checkShoes = (CheckBox) custom.findViewById(R.id.checkBoxShoesCategory);
+        checkHardware = (CheckBox) custom.findViewById(R.id.checkBoxHardwareCategory);
         savebtn = (Button)custom.findViewById(R.id.savebtn);
         canbtn = (Button)custom.findViewById(R.id.canbtn);
-        custom.setTitle("Custom Dialog");
+        custom.setTitle("Choose Product Category");
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // TODO Auto-generated method stub
-                fname = Fname.getText().toString();
-                lname = Lname.getText().toString();
                 custom.dismiss();
             }
         });

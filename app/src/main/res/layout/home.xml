@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_gravity="bottom"
-    android:background="@color/hShopper_background4"
+    android:background="@drawable/back"
     android:orientation="vertical">
 
     <SearchView
@@ -21,7 +21,11 @@
             android:id="@+id/mostRecentLabel"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Most recent" />
+            android:text="Most recent"
+            android:textColor="@color/hShopper_background1"
+            android:textSize="25dp"
+            android:padding="10dp"
+            android:paddingLeft="20dp" />
 
         <ImageView
             android:id="@+id/takePhotoButton"
@@ -35,12 +39,14 @@
         <GridView
             android:id="@+id/receiptGridView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/takePhotoButton"
+            android:layout_height="wrap_content"
             android:layout_below="@id/mostRecentLabel"
-            android:columnWidth="100dp"
-            android:numColumns="auto_fit"
-            android:stretchMode="columnWidth" />
+            android:columnWidth="150dp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:gravity="center_horizontal"
+            android:background="@drawable/back"
+            android:layout_alignParentEnd="false" />
 
 
     </RelativeLayout>

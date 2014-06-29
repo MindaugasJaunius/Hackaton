@@ -94,7 +94,7 @@ public final class TestFragment extends Fragment implements OnClickListener {
                     R.layout.home, null);
             GridView gridView = (GridView) layout.findViewById(R.id.receiptGridView);
 
-            gridView.setAdapter(new ImageAdapter(context, MOBILE_OS));
+            gridView.setAdapter(new ImageAdapter(context));
 
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
