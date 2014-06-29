@@ -71,11 +71,13 @@ public final class TestFragment extends Fragment implements OnClickListener {
         } else if (mContent.equalsIgnoreCase("advices")) {
             RelativeLayout layoutAdvices = (RelativeLayout) inflater.inflate(
                     R.layout.advices, null);
-            TextView textView1 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView1);
-            TextView textView2 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView2);
-            TextView textView3 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView3);
-            TextView textView4 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView4);
-            TextView textView5 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView5);
+
+            //Advice panel
+            final TextView textView1 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView1);
+            final TextView textView2 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView2);
+            final TextView textView3 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView3);
+            final TextView textView4 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView4);
+            final TextView textView5 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView5);
 
             final TextView textViewContent1 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent1);
             final TextView textViewContent2 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent2);
@@ -83,17 +85,31 @@ public final class TestFragment extends Fragment implements OnClickListener {
             final TextView textViewContent4 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent4);
             final TextView textViewContent5 = (TextView) layoutAdvices.findViewById(R.id.adviceTextViewContent5);
 
+            //Contact panel
+            final TextView contactTextView1 = (TextView) layoutAdvices.findViewById(R.id.contactTextView1);
+            final TextView contactTextView2 = (TextView) layoutAdvices.findViewById(R.id.contactTextView2);
+            final TextView contactTextView3 = (TextView) layoutAdvices.findViewById(R.id.contactTextView3);
+            final TextView contactTextViewContent1 = (TextView) layoutAdvices.findViewById(R.id.contactTextViewContent1);
+            final TextView contactTextViewContent2 = (TextView) layoutAdvices.findViewById(R.id.contactTextViewContent2);
+            final TextView contactTextViewContent3 = (TextView) layoutAdvices.findViewById(R.id.contactTextViewContent3);
+
             textViewContent1.setVisibility(View.GONE);
             textViewContent2.setVisibility(View.GONE);
             textViewContent3.setVisibility(View.GONE);
             textViewContent4.setVisibility(View.GONE);
             textViewContent5.setVisibility(View.GONE);
+            contactTextViewContent1.setVisibility(View.GONE);
+            contactTextViewContent2.setVisibility(View.GONE);
+            contactTextViewContent3.setVisibility(View.GONE);
 
             expandAdvice(textView1, textViewContent1);
             expandAdvice(textView2, textViewContent2);
             expandAdvice(textView3, textViewContent3);
             expandAdvice(textView4, textViewContent4);
             expandAdvice(textView5, textViewContent5);
+            expandAdvice(contactTextView1, contactTextViewContent1);
+            expandAdvice(contactTextView2, contactTextViewContent2);
+            expandAdvice(contactTextView3, contactTextViewContent3);
 
             final ViewSwitcher viewSwitcher = (ViewSwitcher) layoutAdvices.findViewById(R.id.viewswitcher);
 

@@ -36,7 +36,9 @@
         android:id="@+id/disputeReasonDropdown"
         android:spinnerMode="dropdown"
         android:paddingTop="10dp"
-        android:paddingRight="10dp" />
+        android:paddingRight="10dp"
+        android:entries="@array/dispute_reasons_array"
+        android:prompt="@string/dispute_reasons_prompt"/>
 
     <RelativeLayout
         android:orientation="horizontal"
