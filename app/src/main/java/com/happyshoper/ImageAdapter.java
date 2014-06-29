@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 public class ImageAdapter extends BaseAdapter {
     private Context context;
-    private final String[] mobileValues;
+    private final int[] receiptValues = new int[]{R.drawable.cekis1, R.drawable.cekis2, R.drawable.cekis3};
 
-    public ImageAdapter(Context context, String[] mobileValues) {
+    public ImageAdapter(Context context) {
         this.context = context;
-        this.mobileValues = mobileValues;
+
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -36,10 +36,7 @@ public class ImageAdapter extends BaseAdapter {
             ImageView imageView = (ImageView) gridView
                     .findViewById(R.id.grid_item_image);
 
-            String mobile = mobileValues[position];
-
-
-                imageView.setImageResource(R.drawable.ic_launcher);
+                imageView.setImageResource(receiptValues[position]);
 
 
         } else {
@@ -51,7 +48,7 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mobileValues.length;
+        return receiptValues.length;
     }
 
     @Override

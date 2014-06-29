@@ -211,31 +211,4 @@ public class CameraActivity extends Activity implements PictureCallback, Surface
         mCaptureImageButton.setOnClickListener(mRecaptureImageButtonClickListener);
     }
 
-    private void showCategoryDialog(){
-        custom = new Dialog(CameraActivity.this);
-        custom.setContentView(R.layout.category_dialog);
-        Fname = (EditText)custom.findViewById(R.id.fname);
-        Lname = (EditText)custom.findViewById(R.id.lname);
-        savebtn = (Button)custom.findViewById(R.id.savebtn);
-        canbtn = (Button)custom.findViewById(R.id.canbtn);
-        custom.setTitle("Custom Dialog");
-        savebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO Auto-generated method stub
-                fname = Fname.getText().toString();
-                lname = Lname.getText().toString();
-                custom.dismiss();
-            }
-        });
-        canbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO Auto-generated method stub
-                custom.dismiss();
-            }
-        });
-        custom.show();
-    }
-
 }

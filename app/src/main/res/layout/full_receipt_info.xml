@@ -4,7 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@color/hShopper_background4">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:text="Receipt"
+        android:id="@+id/receiptTextView"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/vpi__background_holo_light"
+        android:textSize="25dp"
+        android:background="@color/hShopper_background1"
+        android:autoText="false"
+        android:gravity="center|center_horizontal" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -14,33 +27,41 @@
             android:id="@+id/receipt"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/kika" />
-
-        <ImageView
-            android:id="@+id/fillReturnFormButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/kika"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_margin="10dp" />
     </FrameLayout>
 
     <TextView
         android:id="@+id/productCategory"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Avalyne"
-        android:textSize="50sp"
-        android:layout_marginTop="20dp" />
+        android:textSize="40dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/hShopper_background1"
+        android:gravity="center_horizontal"
+        android:background="@drawable/back" />
 
     <TextView
         android:id="@+id/userRights"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Vartotojo teises"
-        android:textSize="50sp"
-        android:layout_marginTop="20dp" />
+        android:textSize="40dp"
+        android:textColor="@color/hShopper_background1"
+        android:gravity="center_horizontal"
+        android:background="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/fillReturnFormButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/ic_launcher" />
 
 
 </LinearLayout>

@@ -6,8 +6,9 @@
 
     <ImageView
         android:id="@+id/grid_item_image"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:src="@drawable/ic_launcher" >
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:src="@drawable/ic_launcher"
+        android:layout_gravity="center_horizontal">
     </ImageView>
 </LinearLayout>
