@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -71,7 +72,7 @@ public class FullReceiptInfoActivity extends Activity {
         custom.setContentView(R.layout.category_dialog);
         checkClothing = (CheckBox) custom.findViewById(R.id.checkBoxClothingCategory);
         checkShoes = (CheckBox) custom.findViewById(R.id.checkBoxShoesCategory);
-        checkShoes.setSelected(true);
+        checkShoes.setChecked(true);
         checkHardware = (CheckBox) custom.findViewById(R.id.checkBoxHardwareCategory);
         savebtn = (Button)custom.findViewById(R.id.savebtn);
         canbtn = (Button)custom.findViewById(R.id.canbtn);
