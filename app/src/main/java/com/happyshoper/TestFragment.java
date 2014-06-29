@@ -154,11 +154,9 @@ public final class TestFragment extends Fragment implements OnClickListener {
                     R.layout.home, null);
             //GridView gridView = (GridView) layout.findViewById(R.id.receiptGridView);
             ListView listView = (ListView) layout.findViewById(R.id.receiptListView);
-            ListView listView2 = (ListView) layout.findViewById(R.id.receiptListView2);
             final ImageAdapter listAdapter = new ImageAdapter(context);
             listAdapter.setCategory("hardware");
             listView.setAdapter(listAdapter);
-            listView2.setAdapter(listAdapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
