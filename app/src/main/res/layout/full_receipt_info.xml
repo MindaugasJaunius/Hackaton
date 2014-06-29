@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:background="@color/hShopper_background4">
+    android:background="@color/hShopper_background4"
+    android:id="@+id/fullReceiptLayout">
 
     <TextView
         android:layout_width="fill_parent"

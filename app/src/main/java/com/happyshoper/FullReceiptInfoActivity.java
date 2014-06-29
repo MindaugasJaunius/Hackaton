@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -25,8 +26,10 @@ public class FullReceiptInfoActivity extends Activity {
     CheckBox checkHardware;
     Button savebtn;
     Button canbtn;
-    String fname;
-    String lname;
+    TextView category;
+
+    //LinearLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,7 @@ public class FullReceiptInfoActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.full_receipt_info);
 
+        //layout = (LinearLayout)findViewById(R.id.fullReceiptLayout);
         TextView userRights = (TextView)findViewById(R.id.userRights);
         userRights.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +50,7 @@ public class FullReceiptInfoActivity extends Activity {
             }
         });
 
-        TextView category = (TextView)findViewById(R.id.productCategory);
+        category = (TextView)findViewById(R.id.productCategory);
         category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +65,7 @@ public class FullReceiptInfoActivity extends Activity {
         custom.setContentView(R.layout.category_dialog);
         checkClothing = (CheckBox) custom.findViewById(R.id.checkBoxClothingCategory);
         checkShoes = (CheckBox) custom.findViewById(R.id.checkBoxShoesCategory);
+        checkShoes.setSelected(true);
         checkHardware = (CheckBox) custom.findViewById(R.id.checkBoxHardwareCategory);
         savebtn = (Button)custom.findViewById(R.id.savebtn);
         canbtn = (Button)custom.findViewById(R.id.canbtn);
@@ -68,7 +73,14 @@ public class FullReceiptInfoActivity extends Activity {
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO Auto-generated method stub
+                if(checkClothing.isChecked()){
+                 category.setText("Drabuziai");
+                }else if (checkHardware.isChecked()){
+                  category.setText("Elektronika");
+                } else if (checkShoes.isChecked()) {
+                   category.setText("Avalyne");
+                }
+
                 custom.dismiss();
             }
         });
