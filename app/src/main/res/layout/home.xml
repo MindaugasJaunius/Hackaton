@@ -28,7 +28,9 @@
                 android:src="@drawable/batas"
                 android:layout_alignParentRight="false"
                 android:layout_alignParentLeft="true"
-                android:layout_margin="20dp" />
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,7 +45,9 @@
                 android:focusableInTouchMode="false"
                 android:src="@drawable/kompas"
                 android:layout_alignParentRight="true"
-                android:layout_margin="20dp" />
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
             </RelativeLayout>
 
         <ImageView
