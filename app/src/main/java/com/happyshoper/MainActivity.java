@@ -40,9 +40,9 @@ public class MainActivity extends BaseSampleActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.simple_underlines);
 
-        int id = this.getResources().getIdentifier("android:id/search_src_text", null, null);
-        TextView textView = (TextView)findViewById(id);
-        textView.setTextColor(Color.BLACK);
+//        int id = this.getResources().getIdentifier("android:id/search_src_text", null, null);
+//        TextView textView = (TextView)findViewById(id);
+//        textView.setTextColor(Color.BLACK);
 
         mAdapter = new TestFragmentAdapter(getSupportFragmentManager(), getApplicationContext());
         mAdapter.setNotification("moneyIncoming");

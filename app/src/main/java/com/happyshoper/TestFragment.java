@@ -33,6 +33,9 @@ public final class TestFragment extends Fragment implements OnClickListener {
     private String mContent = "???";
     private Animation slide_in_left, slide_out_right;
     boolean switchedToCategories = false;
+    boolean isShoesSelected = false;
+    boolean isClothsSelected = false;
+    boolean isHardwareSelected = false;
 
     public static TestFragment newInstance(String content, Context context) {
         TestFragment fragment = new TestFragment();
@@ -152,7 +155,9 @@ public final class TestFragment extends Fragment implements OnClickListener {
             //GridView gridView = (GridView) layout.findViewById(R.id.receiptGridView);
             ListView listView = (ListView) layout.findViewById(R.id.receiptListView);
 
-            listView.setAdapter(new ImageAdapter(context));
+            final ImageAdapter listAdapter = new ImageAdapter(context);
+            listAdapter.setCategory("hardware");
+            listView.setAdapter(listAdapter);
 
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -164,6 +169,61 @@ public final class TestFragment extends Fragment implements OnClickListener {
 
             ImageView takePhoto = (ImageView) layout.findViewById(R.id.takePhotoButton);
             takePhoto.setOnClickListener(this);
+
+            final ImageView btnShoes = (ImageView)layout.findViewById(R.id.categoryShoes);
+            ImageView btnCloths = (ImageView)layout.findViewById(R.id.categoryClothing);
+            ImageView btnHardware = (ImageView)layout.findViewById(R.id.categoryHardware);
+
+            btnShoes.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!isShoesSelected){
+                        //btnShoes.setImageDrawable(nuspalvintas);
+                        isShoesSelected = true;
+                        listAdapter.setCategory("shoes");
+                        listAdapter.notifyDataSetChanged();
+                    } else {
+                        //btnShoes.setImageDrawable(nenuspalvintas);
+                        isShoesSelected = false;
+                        listAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+            btnCloths.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!isClothsSelected){
+                        //btnShoes.setImageDrawable(nuspalvintas);
+                        isClothsSelected = true;
+                        listAdapter.setCategory("cloths");
+                        listAdapter.notifyDataSetChanged();
+                    } else {
+                        //btnShoes.setImageDrawable(nenuspalvintas);
+                        isClothsSelected = false;
+                        listAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+            btnHardware.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!isHardwareSelected){
+                        //btnShoes.setImageDrawable(nuspalvintas);
+                        isHardwareSelected = true;
+                        listAdapter.setCategory("hardware");
+                        listAdapter.notifyDataSetChanged();
+                    } else {
+                        //btnShoes.setImageDrawable(nenuspalvintas);
+                        isHardwareSelected = false;
+                        listAdapter.setCategory("hardware");
+                        listAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
+
         }
         return layout;
     }
