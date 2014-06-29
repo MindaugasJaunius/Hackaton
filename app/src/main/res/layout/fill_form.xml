@@ -55,16 +55,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="Atgal"
         android:id="@+id/fillFormBackButton"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:textColor="@color/hShopper_font"
+        android:background="@color/hShopper_background" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
+        android:text="Formuoti PDF"
         android:id="@+id/fillFormOkButton"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@color/hShopper_background"
+        android:textColor="@color/hShopper_font" />
 
 </RelativeLayout>
 

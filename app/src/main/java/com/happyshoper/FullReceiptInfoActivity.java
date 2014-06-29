@@ -49,7 +49,7 @@ public class FullReceiptInfoActivity extends Activity {
         returnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mIntent = new Intent(FullReceiptInfoActivity.this, FillFormActivity.class);
+                Intent mIntent = new Intent(FullReceiptInfoActivity.this, MainActivity.class);
                 startActivity(mIntent);
             }
         });
