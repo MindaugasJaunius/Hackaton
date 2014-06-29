@@ -7,47 +7,34 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView"
+        android:text="Parduotuvės pavadinimas"
+        android:id="@+id/shopNameTextView"
         android:textSize="30sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText" />
+        android:id="@+id/shopNameEnteredText" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView2"
+        android:text="Parduotuvės adresas"
+        android:id="@+id/shopAddressTextView2"
         android:textSize="30sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView3"
-        android:textSize="30sp" />
+        android:id="@+id/shopAddressEnteredText" />
 
-    <EditText
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView4"
-        android:textSize="30sp" />
+        android:id="@+id/disputeReasonDropdown"
+        android:spinnerMode="dropdown"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText4" />
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

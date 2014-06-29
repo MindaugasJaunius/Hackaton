@@ -31,14 +31,14 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@color/hShopper_background4"
+            android:background="@color/hShopper_background"
             android:orientation="vertical">
 
             <SearchView
                 android:id="@+id/searchAdviceView"
                 android:layout_width="fill_parent"
                 android:layout_height="45dp"
-                android:background="@color/hShopper_background1" />
+                android:background="@color/hShopper_extra" />
 
 
             <ScrollView
@@ -65,7 +65,7 @@
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Vartotojas turi teisę"
-                        android:textColor="@color/hShopper_background1"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="25dp" />
 
                     <TextView
@@ -78,7 +78,7 @@
                         android:background="@drawable/back"
                         android:padding="5dp"
                         android:text="1) savo nuožiūra įsigyti ir naudoti prekes ir paslaugas \n2) įsigyti saugias, tinkamos kokybės prekes ar paslaugas \n3) gauti teisingą ir visapusišką informaciją valstybine kalba apie parduodamas prekes, teikiamas   paslaugas  \n4) į pažeistų teisių gynimą  \n5) gauti informaciją apie savo teisių įgyvendinimo ir gynimo tvarką"
-                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="20dp" />
 
                     <TextView
@@ -95,7 +95,7 @@
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Tinkamos kokybės ne maisto prekės"
-                        android:textColor="@color/hShopper_background1"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="25dp" />
 
                     <TextView
@@ -108,7 +108,7 @@
                         android:background="@drawable/back"
                         android:padding="5dp"
                         android:text="1) Vartotojas pateikęs prekės įsigijimą patvirtinantį dokumentą, turi teisę per 14 dienų grąžinti  (išskyrus tinkamos kokybės prekes, kurios patenka į nekeičiamų ir negrąžinamų prekių sąrašą*)   nenaudotas, nedėvėtas, su ženklinimo etiketėmis, nesugadintas ir nepraradusias prekinės   išvaizdos prekes, netinkančias vartotojui dėl formos, spalvos, dydžio, komplektiškumo (pvz.,   avalynė, viršutiniai rūbai, galanteriniai gaminiai ir kt.)  \n2) Naudotos prekės, įsigytos specializuotose (tik naudotoms prekėms skirtose) parduotuvėse,   turgavietėse ir kitose nustatytose viešosiose vietose, taip pat sveriamos ir matuojamos prekės,   kurios vartotojo pageidavimu buvo specialiai paruoštos, atpjautos, supjaustytos ir pan., gali būti   keičiamos ar grąžinamos tik pardavėjui sutikus"
-                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="20dp" />
 
                     <TextView
@@ -126,7 +126,7 @@
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Nekeičiamos ir negrąžinamos tinkamos kokybės ne maisto prekės"
-                        android:textColor="@color/hShopper_background1"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="25dp" />
 
                     <TextView
@@ -139,7 +139,7 @@
                         android:background="@drawable/back"
                         android:padding="5dp"
                         android:text="• Parfumerijos, kosmetikos ir tualetiniai gaminiai\n• Fotografijos ir kinematografijos prekės, spausdintos knygos, reprodukcijos ir kiti poligrafijos pramonės dirbiniai \n• Audiniai, kiliminės grindų dangos, išskyrus kilimus ir kilimėlius\n• Megzti ar/ir siūti vyriški, berniukų, moteriški arba mergaičių apatiniai drabužiai, naktiniai marškiniai,pižamos ir panašūs dirbiniai\n• Kūdikių drabužėliai\n• Pėdkelnės, kojinės, puskojinės ir kiti panašūs dirbiniai\n• Liemenėlės, juosmenys, korsetai ir panašūs dirbiniai\n• Perlai, brangakmeniai, taurieji metalai bei jų dirbiniai, išskyrus dirbtinę bižuteriją\n• Mašinos ir mechaniniai įrenginiai, elektros mašinos ir įrenginiai\n• Garso įrašymo ir atkūrimo bei televizijos vaizdo ir garso įrašymo ir atkūrimo aparatai\n• Antžeminio transporto priemonės, laivai, valtys ir plaukiojantys įrenginiai\n• Optikos, fotografijos, kinematografijos, matavimo, kontrolės, medicinos arba chirurgijos prietaisai ir aparatai\n• Laikrodžiai\n• Muzikos instrumentai\n• Ginklai ir šaudmenys\n• Baldai, patalynės reikmenys, šviestuvai\n• Žaislai, žaidimai, išskyrus sporto ir meškeriojimo reikmenis"
-                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="20dp" />
 
                     <TextView
@@ -157,7 +157,7 @@
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Kai nenustatytas prekės kokybės garantijos terminas"
-                        android:textColor="@color/hShopper_background1"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="25dp" />
 
                     <TextView
@@ -170,7 +170,7 @@
                         android:background="@drawable/back"
                         android:padding="5dp"
                         android:text="Vartotojas reikalavimus dėl prekės  trūkumų gali pareikšti per protingą terminą, bet ne vėliau kaip per 2 metus nuo prekės perdavimo dienos"
-                        android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="20dp" />
 
                     <TextView
@@ -188,7 +188,7 @@
                         android:paddingRight="5dp"
                         android:paddingTop="5dp"
                         android:text="Kaip kreiptis į pardavėją, įsigijus netinkamos kokybės prekę?"
-                        android:textColor="@color/hShopper_background1"
+                        android:textColor="@color/hShopper_font"
                         android:textSize="25dp" />
 
                     <TextView
@@ -202,7 +202,8 @@
                         android:padding="5dp"
                         android:singleLine="false"
                         android:text="Vartotojas, įsigijęs netinkamos kokybės prekę, pastebėjęs prekės kokybės trūkumus ir manydamas, kad jo teisės buvo pažeistos, į pardavėją, nurodydamas savo reikalavimą, kreipiasi raštu"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:textColor="@color/hShopper_font" />
                 </LinearLayout>
             </ScrollView>
 

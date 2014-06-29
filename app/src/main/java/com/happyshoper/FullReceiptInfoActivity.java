@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -51,6 +52,14 @@ public class FullReceiptInfoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 showCategoryDialog();
+            }
+        });
+        ImageView imageView = (ImageView) findViewById(R.id.fillReturnFormButton);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(FullReceiptInfoActivity.this, FillFormActivity.class);
+                startActivity(mIntent);
             }
         });
 

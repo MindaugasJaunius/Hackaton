@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/hShopper_background4"
+    android:background="@color/hShopper_background"
     tools:context=".MyActivity">
 
     <TextView
@@ -14,10 +14,10 @@
         android:textIsSelectable="false"
         android:textColor="#ffffffff"
         android:layout_alignParentTop="true"
-        android:background="@color/hShopper_background1"
+        android:background="@color/hShopper_extra"
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
-        android:paddingBottom="20dp"
+        android:paddingBottom="10dp"
         android:gravity="center_horizontal" />
 
     <ImageView

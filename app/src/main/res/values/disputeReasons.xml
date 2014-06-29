@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dispute_reasons_array">
+        <item>Netinkamos kokybes ne maisto prekes</item>
+        <item>Prekes pirkimo - pardavimo sutartis, sudaryta rysio priemonemis</item>
+        <item>Nesaziningu vartojimo sutarties salygu taikymas</item>
+        <item>Reklamos istatymu reikalavimu pazeidimo</item>
+    </string-array>
+</resources>

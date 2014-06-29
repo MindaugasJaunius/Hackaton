@@ -11,7 +11,7 @@
         android:id="@+id/searchReceiptInputView"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/hShopper_background1" />
+        android:background="@color/hShopper_extra" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:padding="10dp"
             android:paddingLeft="20dp"
             android:text="Most recent"
-            android:textColor="@color/hShopper_background1"
+            android:textColor="@color/hShopper_font"
             android:textSize="25dp"
             android:textStyle="italic" />
 
