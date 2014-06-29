@@ -37,19 +37,15 @@
             android:adjustViewBounds="false"
             android:src="@drawable/ic_launcher" />
 
-        <GridView
-            android:id="@+id/receiptGridView"
+        <ListView
+            android:id="@+id/receiptListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/takePhotoButton"
             android:layout_below="@id/mostRecentLabel"
             android:background="#ffffffff"
-            android:columnWidth="150dp"
-            android:gravity="center_horizontal"
-            android:numColumns="1"
-            android:stretchMode="columnWidth">
-
-        </GridView>
+            android:gravity="center_horizontal">
+        </ListView>
 
 
     </RelativeLayout>

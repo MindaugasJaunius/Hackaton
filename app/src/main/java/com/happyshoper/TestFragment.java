@@ -20,14 +20,15 @@ import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 public final class TestFragment extends Fragment implements OnClickListener {
     private static final String KEY_CONTENT = "TestFragment:Content";
-    private static final String[] MOBILE_OS = new String[] {
-            "Android", "iOS","Windows", "Blackberry" };
+    private static final String[] MOBILE_OS = new String[]{
+            "Android", "iOS", "Windows", "Blackberry"};
     private Context context;
     private String mContent = "???";
     private Animation slide_in_left, slide_out_right;
@@ -48,7 +49,6 @@ public final class TestFragment extends Fragment implements OnClickListener {
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,10 +65,10 @@ public final class TestFragment extends Fragment implements OnClickListener {
 
         LinearLayout layout = null;
 
-        if(mContent.equalsIgnoreCase("partners")) {
+        if (mContent.equalsIgnoreCase("partners")) {
             return inflater.inflate(
                     R.layout.partners, null);
-        } else if(mContent.equalsIgnoreCase("advices")) {
+        } else if (mContent.equalsIgnoreCase("advices")) {
             RelativeLayout layoutAdvices = (RelativeLayout) inflater.inflate(
                     R.layout.advices, null);
             TextView textView1 = (TextView) layoutAdvices.findViewById(R.id.adviceTextView1);
@@ -105,15 +105,15 @@ public final class TestFragment extends Fragment implements OnClickListener {
             viewSwitcher.setInAnimation(slide_in_left);
             viewSwitcher.setOutAnimation(slide_out_right);
 
-            Button faq = (Button)layoutAdvices.findViewById(R.id.switchToFaq);
-            Button categories = (Button)layoutAdvices.findViewById(R.id.switchToCategories);
+            Button faq = (Button) layoutAdvices.findViewById(R.id.switchToFaq);
+            Button categories = (Button) layoutAdvices.findViewById(R.id.switchToCategories);
 
             faq.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(switchedToCategories) {
+                    if (switchedToCategories) {
                         viewSwitcher.showPrevious();
-                        switchedToCategories=false;
+                        switchedToCategories = false;
                     }
                 }
             });
@@ -121,9 +121,9 @@ public final class TestFragment extends Fragment implements OnClickListener {
             categories.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(!switchedToCategories) {
+                    if (!switchedToCategories) {
                         viewSwitcher.showNext();
-                        switchedToCategories=true;
+                        switchedToCategories = true;
                     }
                 }
             });
@@ -133,11 +133,12 @@ public final class TestFragment extends Fragment implements OnClickListener {
         } else {
             layout = (LinearLayout) inflater.inflate(
                     R.layout.home, null);
-            GridView gridView = (GridView) layout.findViewById(R.id.receiptGridView);
+            //GridView gridView = (GridView) layout.findViewById(R.id.receiptGridView);
+            ListView listView = (ListView) layout.findViewById(R.id.receiptListView);
 
-            gridView.setAdapter(new ImageAdapter(context));
+            listView.setAdapter(new ImageAdapter(context));
 
-            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent mIntent = new Intent(context, FullReceiptInfoActivity.class);
@@ -145,11 +146,9 @@ public final class TestFragment extends Fragment implements OnClickListener {
                 }
             });
 
-            ImageView takePhoto = (ImageView)layout.findViewById(R.id.takePhotoButton);
+            ImageView takePhoto = (ImageView) layout.findViewById(R.id.takePhotoButton);
             takePhoto.setOnClickListener(this);
         }
-
-
         return layout;
     }
 
@@ -157,7 +156,7 @@ public final class TestFragment extends Fragment implements OnClickListener {
         textView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (textViewContent.isShown()){
+                if (textViewContent.isShown()) {
                     slideUp(view.getContext(), textViewContent);
                     final Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -197,21 +196,23 @@ public final class TestFragment extends Fragment implements OnClickListener {
 //            startActivity(myIntent);
 //        }
     }
-    private static void slideDown(Context ctx, View v){
+
+    private static void slideDown(Context ctx, View v) {
         Animation a = AnimationUtils.loadAnimation(ctx, R.anim.slide_down);
-        if(a != null){
+        if (a != null) {
             a.reset();
-            if(v != null){
+            if (v != null) {
                 v.clearAnimation();
                 v.startAnimation(a);
             }
         }
     }
-    private static void slideUp(Context ctx, View v){
+
+    private static void slideUp(Context ctx, View v) {
         Animation a = AnimationUtils.loadAnimation(ctx, R.anim.slide_up);
-        if(a != null){
+        if (a != null) {
             a.reset();
-            if(v != null){
+            if (v != null) {
                 v.clearAnimation();
                 v.startAnimation(a);
             }
