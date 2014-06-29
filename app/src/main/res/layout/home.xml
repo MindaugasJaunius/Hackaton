@@ -61,20 +61,15 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="false"
-            android:src="@drawable/camerblue"
-            android:background="@drawable/top_dropshadow" />
+            android:background="@drawable/top_dropshadow"
+            android:src="@drawable/camerblue" />
 
-        <ListView
-            android:id="@+id/receiptListView"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/takePhotoButton"
-            android:layout_below="@id/categoryButtons"
-            android:background="@color/hShopper_background"
-            android:gravity="center_horizontal"
-            android:cacheColorHint="#00000000"
-            android:divider="@drawable/divider" android:dividerHeight="1px">
-        </ListView>
+            android:layout_below="@id/categoryButtons">
+
 
             <TextView
                 android:id="@+id/date1"
@@ -89,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/date1"
-                android:background="#ffffffff"
+                android:background="@color/hShopper_background"
                 android:cacheColorHint="#00000000"
                 android:divider="@drawable/divider"
                 android:dividerHeight="1px"
