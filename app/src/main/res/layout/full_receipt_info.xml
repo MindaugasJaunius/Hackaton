@@ -17,19 +17,20 @@
         android:textSize="25dp"
         android:background="@color/hShopper_background1"
         android:autoText="false"
-        android:gravity="center|center_horizontal" />
+        android:gravity="center|center_horizontal"
+        android:textStyle="italic" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#ffffffff">
 
         <ImageView
             android:id="@+id/receipt"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/kika"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cekis1_big"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
             android:layout_margin="10dp" />
     </FrameLayout>
 
@@ -40,7 +41,6 @@
         android:layout_gravity="center_horizontal"
         android:text="Avalyne"
         android:textSize="40dp"
-        android:layout_marginTop="100dp"
         android:textColor="@color/hShopper_background1"
         android:gravity="center_horizontal"
         android:background="@drawable/back" />
